@@ -1,3 +1,6 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
@@ -24,11 +27,7 @@ article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section {
 display: block;
 }
-body {
-color: rgba(255, 255, 255, 0.87);
-background-color: #242424;
-line-height: 1;
-}
+
 ol, ul {
 list-style: none;
 }
@@ -49,40 +48,16 @@ body {
   margin: 0;
   font-family: Outfit;
   min-width: 1280px;
-}
-  /*-------------Bags Coffee--------------*/
-.contentBags{
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  gap: 24px;
-  flex-wrap: wrap;
-}
-.contentCoffee{
-  color: black;
-  border: 1px solid #E3DED7;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: 24px;
-  border-radius: 8px;
-  padding:24px;
-}
-.contentCoffee:hover{
-  background-color: #E3DED7;
+  line-height: 1;
 }
 
-.btnBagAdd{
-    background: rgba(42, 91, 69, 0.7); 
-    padding: 8px;
-    border-radius: 4px;
-    font-weight: 600;
-    font-size: 14px;
-    color: #FFFFFF;
-    cursor: pointer;
-}
-.btnBagAdd:hover{
-  background-color: rgb(42, 91, 69); 
- 
+/* 
+ 5px 5px 10px #5a5a5a,
+             -5px -5px 10px #ffffff;
+
+5px 5px 12px #6a6a6a,
+             -5px -5px 12px #767676; */
+.shadowElement{
+  box-shadow: 5px 5px 8px #a5a5a5,
+  -5px -5px 8px #ababab;  
 }

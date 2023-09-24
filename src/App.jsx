@@ -1,14 +1,12 @@
 import React from 'react'
 import './App.css'
-import { GetProducts } from './getProducts/getProducts.jsx'
+
+import { Home } from './pages/Home'
 function App() {
-
-
   return (
     <>
-      <GetProducts/>
+      <Home/>
     </>
   )
 }
-
 export default App
