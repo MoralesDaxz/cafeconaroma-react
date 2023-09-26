@@ -58,6 +58,34 @@ body {
 5px 5px 12px #6a6a6a,
              -5px -5px 12px #767676; */
 .shadowElement{
-  box-shadow: 5px 5px 8px #a5a5a5,
-  -5px -5px 8px #ababab;  
+  border-radius: 19px;
+  box-shadow: 5px 5px 6px #a5a5a5,
+  -5px -5px 6px #9b9a9a;  
+}
+.inputForm{
+  border-radius: 6px;
+  height: 34px;
+  width: 100%;
+  border: 1px solid #D1D5DB;
+  outline: none;
+  padding: 17px;
+}
+.inputForm:hover{
+  border: 1px solid #9B9EA3;
+}
+.inputForm:focus{
+  border: 2px solid #3F8F6B;
+}
+.textareaForm{
+  
+  border-radius: 6px;
+  border: 1px solid #D1D5DB;
+  outline: none;
+  padding: 17px;
+}
+.textareaForm:hover{
+  border: 1px solid #9B9EA3;
+}
+.textareaForm:focus{
+  border: 2px solid #3F8F6B;
 }

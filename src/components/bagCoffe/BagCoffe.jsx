@@ -1,12 +1,14 @@
-import { React, useState, useEffect } from 'react'
+import { React,useContext } from 'react'
 import { Button } from '../button/Button'
-const BagCoffee = ({ products, units }) => {
+import {ContextCoffe} from '../../context/ContextCoffeProduct.jsx'
+const BagCoffee = ({ units=8 }) => {
+  const { products, setProducts } = useContext(ContextCoffe);
   return (
     <div key={products._id} className='flex flex-row justify-center gap-6 flex-wrap'>{products?.map((item, indice) => {
       if (indice < units) {
 
         return (
-          <div key={products._id} className='border-solid border border-[#E3DED7] rounded-lg p-6 flex flex-col justify-center items-center gap-6 group/bagCoffee hover:bg-[#f7f5f3]'>
+          <div key={products._id} className='border-solid border border-[#E3DED7] rounded-lg p-6 flex flex-col justify-center items-center gap-6 group/bagCoffee hover:bg-[#E3DED7]'>
             <img key={products._id} src={item.img_url} />
             <p key={products._id} className='text-black font-semibold'>{item.brand}</p>
             <p key={products._id} className='text-black'>{item.price},00 €</p>

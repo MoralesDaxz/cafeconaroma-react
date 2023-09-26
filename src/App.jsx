@@ -1,11 +1,15 @@
 import React from 'react'
 import './App.css'
-
 import { Home } from './pages/Home'
+import {Store} from './pages/Store'
+import {ContextCoffeProvide} from './context/ContextCoffeProduct'
 function App() {
   return (
     <>
-      <Home/>
+    <ContextCoffeProvide>
+        <Home/> 
+     {/* <Store/>  */}
+    </ContextCoffeProvide>
     </>
   )
 }

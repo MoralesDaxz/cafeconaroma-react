@@ -1,17 +1,22 @@
 import React from 'react'
-import { GetProducts } from '../components/getProducts/GetProducts'
-import { NavBar } from '../components/navBar/NavBar.jsx'
+
 import { SectionHero } from '../components/sectionHero/SectionHero.jsx'
-import { CardsInfo } from '../components/cardsInfo/CardsInfo.jsx'
-import { SectionFaq } from '../components/sectionFaq/SectionFaq.jsx'
+import { SectionFaq } from '../components/sectionFaq/SectionFaq'
+import { SectionFeature } from '../components/sectionFeature/SectionFeature'
+import { SectionForm } from '../components/sectionForm/SectionForm.jsx'
+import { SectionCardsInfo } from '../components/sectionCardsInfo/SectionCardsInfo'
+import { SectionFrameCoffe } from '../components/sectionFrameCoffe/SectionFrameCoffe'
+import { BagCoffee } from '../components/bagCoffe/BagCoffe'
+import { ArrowRigth } from '../components/arrowRigth/ArrowRigth.jsx'
 export const Home = () => {
   return (
     <>
-      <NavBar />
-      <SectionHero />
-      <CardsInfo />
-      <GetProducts />
-      <SectionFaq />
+      <SectionHero/>
+      <SectionCardsInfo></SectionCardsInfo>
+      <SectionFrameCoffe title={'Novedades'} component={<BagCoffee units={4}/>} component2={<ArrowRigth color={'black'} text={'Ver todos'}/>}/>
+      <SectionFaq/>
+      <SectionFeature/>
+      <SectionForm></SectionForm>
     </>
   )
 }

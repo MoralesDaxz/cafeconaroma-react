@@ -4,7 +4,7 @@ import cardsCheck from '../../assets/check.svg'
 import cardsTruck from '../../assets/truck.svg'
 import cardsGift from '../../assets/gift.svg'
 
-export const CardsInfo = () => {
+export const SectionCardsInfo = () => {
     const cardsData = [
         {
             img: cardsCheck,
@@ -24,7 +24,7 @@ export const CardsInfo = () => {
     ]
     return (
         <>
-            <section className={`bg-center bg-cover bg-no-repeat  h-[380px] flex flex-col items-center justify-center gap-6 `} style={{ backgroundImage: `url(${cardsImgBg})` }}>
+            <section className={`bg-center bg-cover bg-no-repeat  h-[380px] flex flex-col items-center justify-center gap-6 `} style={{ backgroundImage: `url(${cardsImgBg})`}} >
                 <div className='font-medium text-2xl text-white leading-7'>
                     <h2>Café con las mejores condiciones</h2>
                 </div>
@@ -32,7 +32,7 @@ export const CardsInfo = () => {
                     <div className='flex flex-wrap gap-6'>
                         {cardsData.map(item => {
                             return (
-                                <div className='shadowElement bg-[#F7F5F3] rounded-lg w-[316px] flex flex-col items-center justify-start gap-4 text-center p-6'>
+                                <div className=' bg-[#F7F5F3] rounded-lg w-[316px] flex flex-col items-center justify-start gap-4 text-center p-6'>
                                     <div className='border-0 rounded'>
                                         <img src={`${item.img}`} className='w-[64px] h-[64px] border-0' />
                                     </div>

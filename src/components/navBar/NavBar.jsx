@@ -7,9 +7,9 @@ import { Button } from '../button/Button'
 export const NavBar = () => {
     return (
         <>
-            <nav className='shadowElement text-[#FFFFFF] py-3 px-10 bg-[#2B2A2B] h-16 flex flex-row items-center justify-between min-w-full'>
-                <div className='text-2xl leading-9 h-9 opacity-90 flex flex-row items-center gap-2 cursor-pointer'>
-                    <p className='font-normal'>cafedealtura.com</p>
+            <nav className=' text-[#FFFFFF] py-3 px-10 bg-[#2B2A2B] h-16 flex flex-row items-center justify-between min-w-full'>
+                <div className='h-9 opacity-90 flex flex-row items-center gap-2 cursor-pointer'>
+                    <p className='font-light text-2xl '>cafedealtura.com</p>
                     <img className='w-5 h-6' src={logoCafe} alt="Logo" />
                 </div>
                 <SectionWrapLinks/>
@@ -20,7 +20,7 @@ export const NavBar = () => {
                 </div>
                 <a className="cursor-pointer">
                     <img  src={iconCar} />
-                </a> F
+                </a>
             </nav>
         </>
     )

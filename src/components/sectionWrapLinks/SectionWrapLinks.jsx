@@ -1,9 +1,10 @@
 import React from 'react'
 
-export const SectionWrapLinks = () => {
+const defaultStyle = 'flex flex-row items-center my-4 w-[512px] gap-4 font-medium'
+export const SectionWrapLinks = ({style=defaultStyle}) => {
   return (
 
-    <div className='flex flex-row items-center my-4 w-[512px] gap-4 font-semibold'>
+    <div className={style}>
       <a className='cursor-pointer'>Tienda</a>
       <a className='cursor-pointer'>Suscripción</a>
       <a className='cursor-pointer'>Para empresas</a>
