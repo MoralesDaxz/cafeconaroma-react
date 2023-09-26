@@ -8,18 +8,18 @@ export const SectionCardsInfo = () => {
     const cardsData = [
         {
             img: cardsCheck,
-            prf1: 'Recibe tu pedido sin preocuparte',
-            prf2: 'Tienes cosas más importantes en la cabeza, por eso con nuestra suscripción de café, nunca te quedarás sin tu taza de la mañana.'
+            title: 'Recibe tu pedido sin preocuparte',
+            prf: 'Tienes cosas más importantes en la cabeza, por eso con nuestra suscripción de café, nunca te quedarás sin tu taza de la mañana.'
         },
         {
             img: cardsTruck,
-            prf1: 'Envío en 24/48h',
-            prf2: 'Pide tu café antes de las 12h y lo recibirás al día siguiente.'
+            title: 'Envío en 24/48h',
+            prf: 'Pide tu café antes de las 12h y lo recibirás al día siguiente.'
         },
         {
             img: cardsGift,
-            prf1: 'Descuentos y beneficios',
-            prf2: 'Cada dos meses, te regalamos una bolsa de un nuevo origen sorpresa, para que lo descubras junto a nosotros.'
+            title: 'Descuentos y beneficios',
+            prf: 'Cada dos meses, te regalamos una bolsa de un nuevo origen sorpresa, para que lo descubras junto a nosotros.'
         }
     ]
     return (
@@ -32,12 +32,12 @@ export const SectionCardsInfo = () => {
                     <div className='flex flex-wrap gap-6'>
                         {cardsData.map(item => {
                             return (
-                                <div className=' bg-[#F7F5F3] rounded-lg w-[316px] flex flex-col items-center justify-start gap-4 text-center p-6'>
+                                <div className=' bg-[#F7F5F3] rounded-lg w-[316px] flex flex-col items-center justify-center gap-4 text-center p-6'>
                                     <div className='border-0 rounded'>
                                         <img src={`${item.img}`} className='w-[64px] h-[64px] border-0' />
                                     </div>
-                                    <p className='font-semibold text-lg'>{item.prf1}</p>
-                                    <p className=' font-normal text-sm'>{item.prf2}</p>
+                                    <p className='font-semibold text-lg'>{item.title}</p>
+                                    <p className=' font-normal text-sm'>{item.prf}</p>
                                 </div>
                             )
                         })}

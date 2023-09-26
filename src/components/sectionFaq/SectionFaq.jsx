@@ -41,6 +41,5 @@ export const SectionFaq = () => {
                 <ArrowRigth color={'white'} text={'Resolvemos tus dudas'}></ArrowRigth>
             </section>
         </>
-
     )
 }

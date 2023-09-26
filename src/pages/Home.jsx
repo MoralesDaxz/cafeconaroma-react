@@ -8,6 +8,7 @@ import { SectionCardsInfo } from '../components/sectionCardsInfo/SectionCardsInf
 import { SectionFrameCoffe } from '../components/sectionFrameCoffe/SectionFrameCoffe'
 import { BagCoffee } from '../components/bagCoffe/BagCoffe'
 import { ArrowRigth } from '../components/arrowRigth/ArrowRigth.jsx'
+
 export const Home = () => {
   return (
     <>

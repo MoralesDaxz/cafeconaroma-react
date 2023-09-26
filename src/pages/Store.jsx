@@ -8,7 +8,6 @@ export const Store = () => {
 
   return (
     <>
-    <NavBar/>
     <SectionFrameCoffe title={'Últimos orígenes'} component={<BagCoffee/>}/>
     <SectionCardsInfo/>
     <Footer/>

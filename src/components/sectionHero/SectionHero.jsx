@@ -5,7 +5,7 @@ import { NavBar } from '../navBar/NavBar'
 export const SectionHero = () => {
     return (
         <>
-            <NavBar></NavBar>
+         
             <section className="h-[486px] flex flex-row justify-center py-12 px-10 gap-6">
                 <article className='flex flex-col justify-center gap-4 w-[588px]'>
                     <div className='text-[#2A5B45] font-semibold text-lg w-[588px] h-6'>
