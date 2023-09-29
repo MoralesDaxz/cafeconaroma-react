@@ -1,5 +1,5 @@
 import { React, useState, createContext,useEffect } from "react";
-import { getApiCoffee } from "../utils/apiCoffe/getApiCoffee";
+import { getApiCoffee } from "../utils/getApiCoffee";
 const apiCoffe = "https://cafe-de-altura.vercel.app/api/products"
 
 export const ContextCoffe = createContext(null);

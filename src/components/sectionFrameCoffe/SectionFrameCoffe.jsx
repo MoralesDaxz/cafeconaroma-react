@@ -1,5 +1,6 @@
 import { React } from 'react'
 import arrowBlack from '../../assets/flecha-derecha-negra.svg'
+import { Link } from 'react-router-dom'
 
 export const SectionFrameCoffe = ({component,component2,title}) => {
   const unit = 4/*Control de productos mostrados*/
@@ -10,7 +11,7 @@ export const SectionFrameCoffe = ({component,component2,title}) => {
         <div className='w-full flex flex-row justify-center items-center'>
           {component}
         </div>
-        {component2}
+        <Link to={'/Store'}>{component2}</Link> 
       </div>
     </>
   )

@@ -3,6 +3,7 @@ import iconMail from '../../assets/form-email.svg'
 import iconTlf from '../../assets/form-phone.svg'
 import { Button } from '../button/Button'
 import { Footer } from '../footer/Footer'
+import { Link } from 'react-router-dom'
 
 export const SectionForm = () => {
     return (
@@ -21,7 +22,7 @@ export const SectionForm = () => {
                             </div>
                             <div className='flex flex-row  items-center gap-3'><img src={iconMail} /><p>+1 (555) 123-4567</p></div>
                             <div className='flex flex-row  items-center gap-3'><img src={iconTlf} /><p>support@example.com</p></div>
-                            <p>¿Buscas un trabajo? <span className=' font-medium text-sm underline text-black cursor-pointer'>Ver nuestras ofertas.</span></p>
+                            <p>¿Buscas un trabajo? <Link to={'https://www.m25.space/contact'} target='_blank'><span className=' font-medium text-sm underline text-black cursor-pointer'>Ver nuestras ofertas.</span></Link> </p>
                         </div>
                     </div>
 
@@ -42,8 +43,8 @@ export const SectionForm = () => {
                                 </div>
                                 <textarea className='textareaForm' cols='30' rows='6' placeholder='¿En qué podemos ayudarte?'></textarea>
                                 <div className='flex gap-3'>
-                                    <input className='accent-[#2A5B45]' type='checkbox'></input>
-                                    <label>Acepto la <span className='underline cursor-pointer font-semibold'>Política de Privacidad</span> y los <span className='underline cursor-pointer font-semibold'>Términos y condiciones</span>.</label>
+                                    <input className='accent-[#2A5B45] w-auto' type='checkbox'></input>
+                                    <label>Acepto la <Link className='underline cursor-pointer font-semibold' to={'/Privacidad'}>Política de Privacidad</Link> y los <Link className='underline cursor-pointer font-semibold' to={'/Terminos'}>Términos y condiciones</Link>.</label>
                                 </div>
                                 <Button style={'bg-[#2A5B45] rounded text-white flex flex-row items-center justify-center w-[90px] h-[40px]'} text={'Enviar'}/>
                             </div>

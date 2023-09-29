@@ -10,27 +10,32 @@ import { Suscripcion } from './pages/Suscripcion';
 import { Nosotros } from './pages/Nosotros';
 import { Contacto } from './pages/Contacto';
 import { Cookies } from './pages/Cookies';
-
+import { Carrito } from './pages/carrito';
+import { Origenes } from './pages/Origenes';
+import { Privacidad } from './pages/Privacidad';
+import { Terminos } from './pages/Terminos';
+import {Basket} from './pages/Basket'
 function App() {
+  
   return (
     <>
+    
     <BrowserRouter>
     <NavBar/>
     <Routes>
+    <Route path='/login' element={<Login/>}></Route> 
     <Route path='/' element={<Home/>}></Route>
-    <Route path='/login' element={<Login/>}></Route>
-    <Route path='/Empresa' element={<Empresa/>}></Route>
-    <Route path='/Suscripcion' element={<Suscripcion/>}></Route>
-    <Route path='/Nosotros' element={<Nosotros/>}></Route>
+    <Route path='/Carrito' element={<Carrito/>}></Route>
     <Route path='/Contacto' element={<Contacto/>}></Route>
     <Route path='/Cookies' element={<Cookies/>}></Route>
-
-
-
-
-
-
+    <Route path='/Empresa' element={<Empresa/>}></Route>
+    <Route path='/Nosotros' element={<Nosotros/>}></Route>
+    <Route path='/Origenes' element={<Origenes/>}></Route>
+    <Route path='/Privacidad' element={<Privacidad/>}></Route>
     <Route path='/Store' element={<Store/>}></Route>
+    <Route path='/Suscripcion' element={<Suscripcion/>}></Route>
+    <Route path='/Terminos' element={<Terminos/>}></Route>
+    <Route path='/Cesta' element={<Basket/>}></Route>
     </Routes>
     </BrowserRouter>
     

@@ -1,29 +1,27 @@
 import React from 'react'
-import logoCafe from '../../assets/Coffe.svg'
 import iconTlf from '../../assets/iconTlf.svg'
 import iconMail from '../../assets/footer-email.svg'
 import { SectionWrapLinks } from '../sectionWrapLinks/SectionWrapLinks'
 import { CopyRight } from '../copyRight/CopyRight'
+import { LogoCafe } from '../logoCafe/LogoCafe'
+import { Link } from 'react-router-dom'
 export const Footer = () => {
     return (
         <>
             <div className='h-[310px] bg-[#1F1815] flex flex-col items-center justify-between'>
 
                 <div className=' my-[2%] text-white flex flex-col w-[1200px]'>
-                    <div className='h-9 opacity-90 flex flex-row items-center gap-2 cursor-pointer'>
-                        <p className=' font-light text-2xl '>cafedealtura.com</p>
-                        <img className='w-5 h-6' src={logoCafe} alt="Logo" />
-                    </div>
+                    <LogoCafe/>
                     <div className='flex flex-row  min-w-full'>
                         <div className='flex flex-col gap-4 w-[50%]'>
                             <p className=' text-lg font-medium'>Te ayudamos en</p>
                             <div className='w-[182px] h-[48px] bg-[#515051]  rounded flex flex-row justify-center items-center '>
                                 <img src={iconTlf} alt="iconTlf" />
-                                <a className='font-semibold ml-2 text-sm'> +34 919 49 05 18</a>
+                                <Link className='font-semibold ml-2 text-sm' to={'tel:+34919490518'}> +34 919 49 05 18</Link>
                             </div>
                             <div className='w-[232px] h-[48px] bg-[#515051] rounded flex flex-row justify-center items-center '>
                                 <img src={iconMail} alt="iconTlf" />
-                                <a className='font-semibold ml-2 text-sm'>hola@cafedealtura.com</a>
+                                <Link className='font-semibold ml-2 text-sm' to={'mailto:hola@cafedealtura.com'}>hola@cafedealtura.com</Link>
                             </div>
                         </div>
                         <div className='w-[50%] flex flex-row gap-[127px]'>
@@ -31,9 +29,9 @@ export const Footer = () => {
                             <SectionWrapLinks style={'flex flex-col gap-4 font-medium text-sm'} />
                             </div>
                             <div className='flex flex-col gap-4'>
-                                <p className=' font-medium text-sm cursor-pointer'>Política de privacidad</p>
-                                <p className=' font-medium text-sm cursor-pointer'>Política de cookies</p>
-                                <p className=' font-medium text-sm cursor-pointer'>Términos y condiciones</p>
+                               <Link to={'/Privacidad'} ><p className=' font-medium text-sm cursor-pointer'>Política de privacidad</p></Link> 
+                               <Link to={'/Cookies'}><p className=' font-medium text-sm cursor-pointer'>Política de cookies</p></Link> 
+                                <Link to={'/Terminos'}><p className=' font-medium text-sm cursor-pointer'>Términos y condiciones</p></Link>
                             </div>
                         </div>
 

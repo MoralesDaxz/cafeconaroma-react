@@ -2,6 +2,7 @@ import React from 'react'
 import arrowWhite from '../../assets/fqa-flecha-blanca-derecha.svg'
 import arrowDown from '../../assets/flecha-abajo.svg'
 import { ArrowRigth } from '../arrowRigth/ArrowRigth'
+import { Link } from 'react-router-dom'
 const dataFaq = [
     {
         question: '¿Cómo hago el pedido?',
@@ -38,7 +39,7 @@ export const SectionFaq = () => {
                         </article>)
                     })}
                 </div>
-                <ArrowRigth color={'white'} text={'Resolvemos tus dudas'}></ArrowRigth>
+               <Link to={'/Contacto'}><ArrowRigth color={'white'} text={'Resolvemos tus dudas'}></ArrowRigth></Link> 
             </section>
         </>
     )

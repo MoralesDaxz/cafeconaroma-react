@@ -10,7 +10,7 @@ export const Cookies = () => {
 
      Cookiebot CMP puede ayudarte con eso. Detecta, te informa, y gestiona las cookies con tres potentes y automáticas funciones. Te ayuda a informar de forma adecuada tu uso de cookies y mantener esa información actualizada.</h2>
 
- <Link href="../../index.html">Inicio</Link>
+     <Link to={'/'} className=' text-3xl font-semibold'>Inicio</Link>
 
 
     </>
