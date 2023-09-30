@@ -1,5 +1,4 @@
 import React from 'react'
-import { NavBar } from '../components/navBar/NavBar'
 import { CopyRight } from '../components/copyRight/CopyRight'
 import { Link } from "react-router-dom";
 import { SectionProductBasket } from '../components/sectionProductBasket/SectionProductBasket';
@@ -10,7 +9,7 @@ export const Basket = () => {
   const prod = 2
   return (
     <>
-      <div className='bg-[#F7F5F3] flex flex-col items-center p-10 '>
+      <div className='bg-[#F7F5F3] flex flex-col items-center p-10'>
         <h2 className=' mb-6 font-medium text-2xl text-[#2A5B45]'>Cesta({prod})</h2>
         <div className='w-full  flex flex-row gap-6 '>
           <div className='w-[70%] px-2'>
@@ -18,7 +17,6 @@ export const Basket = () => {
               <h3 className=' font-semibold text-lg'>Productos</h3>
               <SectionProductBasket />
             </div>
-            
             <SectionDelivery />
           </div>
           <div className='bg-[#F7F5F3] w-[30%] p-6'>
@@ -31,6 +29,11 @@ export const Basket = () => {
         </div>
       </div>
       <CopyRight />
+    
+
+
+    
+
     </>
   )
 }

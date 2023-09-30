@@ -8,7 +8,7 @@ export const Store = () => {
 
   return (
     <>
-    <SectionFrameCoffe title={'Últimos orígenes'} component={<BagCoffee/>}/>
+    <SectionFrameCoffe title={'Últimos orígenes'} coffees={<BagCoffee units={8}/>}/>
     <SectionCardsInfo/>
     <Footer/>
     </>

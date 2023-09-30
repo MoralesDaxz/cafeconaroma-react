@@ -9,7 +9,7 @@ export const SectionProductBasket = () => {
         <Product signos={<AddOrSubs/>}/>
         
         <div className='w-[98%] h-[1px] bg-[#E3DED7] self-center'></div>
-        <Product/>
+        <Product signos={<AddOrSubs/>}/>
       </div >
 
     </>

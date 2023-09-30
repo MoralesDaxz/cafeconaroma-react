@@ -14,7 +14,7 @@ import { Carrito } from './pages/carrito';
 import { Origenes } from './pages/Origenes';
 import { Privacidad } from './pages/Privacidad';
 import { Terminos } from './pages/Terminos';
-import {Basket} from './pages/Basket'
+import {Basket} from './pages/Basket';
 function App() {
   
   return (

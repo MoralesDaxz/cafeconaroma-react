@@ -30,9 +30,9 @@ export const SectionCardsInfo = () => {
                 </div>
                 <article className='flex flex-row justify-center items-center'>
                     <div className='flex flex-wrap gap-6'>
-                        {cardsData.map(item => {
+                        {cardsData.map((item,indice )=> {
                             return (
-                                <div className=' bg-[#F7F5F3] rounded-lg w-[316px] flex flex-col items-center justify-center gap-4 text-center p-6'>
+                                <div key={indice} className=' bg-[#F7F5F3] rounded-lg w-[316px] flex flex-col items-center justify-center gap-4 text-center p-6'>
                                     <div className='border-0 rounded'>
                                         <img src={`${item.img}`} className='w-[64px] h-[64px] border-0' />
                                     </div>

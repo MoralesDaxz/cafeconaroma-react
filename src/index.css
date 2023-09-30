@@ -50,13 +50,24 @@ body {
   min-width: 1280px;
   line-height: 1;
 }
+.hidden {
+  display: none;
+}
 
-/* 
- 5px 5px 10px #5a5a5a,
-             -5px -5px 10px #ffffff;
-
-5px 5px 12px #6a6a6a,
-             -5px -5px 12px #767676; */
+.carrito /* carrito */
+{
+    width: 400px;
+    position: fixed;
+    top: 90px;
+    right:4px;
+    background-color: rgba(230, 229, 229, 0.7);
+    z-index: 1001;
+    border-radius: 10px;
+    gap: 2%;
+    overflow-y:auto;
+    height:250px;
+    backdrop-filter: blur(3px) saturate(120%);
+}
 .shadowElement{
   border-radius: 19px;
   box-shadow: 5px 5px 6px #a5a5a5,

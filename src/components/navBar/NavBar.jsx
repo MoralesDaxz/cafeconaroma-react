@@ -1,4 +1,4 @@
-import React from 'react'
+import {React,useState} from 'react'
 
 import iconTlf from '../../assets/iconTlf.svg'
 import iconCar from '../../assets/Car.svg'
@@ -6,7 +6,10 @@ import { SectionWrapLinks } from '../sectionWrapLinks/SectionWrapLinks'
 import { Button } from '../button/Button'
 import { Link } from "react-router-dom";
 import { LogoCafe } from '../logoCafe/LogoCafe'
+import { CarShop } from '../carShop/CarShop.jsx'
+
 export const NavBar = () => {
+
     return (
         <>
             <nav className=' text-[#FFFFFF] py-3 px-10 bg-[#2B2A2B] h-16 flex flex-row items-center justify-between min-w-full'>
@@ -19,9 +22,7 @@ export const NavBar = () => {
                         <Button style={'font-semibold py-3 px-6 bg-[#515051] ml-6 flex flex-row items-center justify-center rounded'} text={'Iniciar sesión'}></Button>
                     </Link>
                 </div>
-                <a className="cursor-pointer">
-                    <img src={iconCar} />
-                </a>
+                <CarShop />
             </nav>
         </>
     )

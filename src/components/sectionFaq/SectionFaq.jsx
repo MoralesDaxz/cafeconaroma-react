@@ -25,9 +25,9 @@ export const SectionFaq = () => {
                     <h2>Preguntas frecuentes</h2>
                 </div>
                 <div className='flex flex-col gap-4 w-[668px]'>
-                    {dataFaq.map(item => {
+                    {dataFaq.map((item,indice) => {
                         return (
-                        <article className='bg-[#F7F5F3] p-6 rounded-[10px]'>
+                        <article key={indice} className='bg-[#F7F5F3] p-6 rounded-[10px]'>
                             <div className='flex flex-row justify-between'>
                                 <h3 className=' font-semibold text-lg text-[#2B2A2B]'>{item.question}</h3>
                                 <img src={arrowDown} alt='flecha-abajo' />
