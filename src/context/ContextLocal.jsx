@@ -1,6 +1,6 @@
 import { React, useState, createContext } from "react";
 
-export const ContextLocal = createContext(null);
+export const ContextLocal = createContext({});
 
 export function ContextLocalProvide({ children }) {
     const [infLocalContext, setinfLocalContext] = useState([
