@@ -34,7 +34,6 @@ export const CarShop = () => {
                 nombre={item.nombre}
                 signos={
                   <AddOrSubs
-                  
                   cantidad={item.cantidad}
                   id={item.id}
                   nombre={item.nombre}
