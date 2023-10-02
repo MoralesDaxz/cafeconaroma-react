@@ -18,7 +18,7 @@ export const Button = ({ text, style, key, id, name, price, img, add, bg }) => {
 
   const putLocalStorage = () => {
 /*     const productExisting = infoLocalStorage.find(item => item.nombre === buy.nombre); */
-    if (add === 'true' || add === 'suma') {
+    if (add === 'addCoffee' || add === 'suma') {
       //buscamos primera coincidencia con nnombre 'buy' en LS
 
       if (productExisting) {

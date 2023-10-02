@@ -14,7 +14,7 @@ export const Home = () => {
     <>
       <SectionHero/>
       <SectionCardsInfo></SectionCardsInfo>
-      <SectionFrameCoffe title={'Novedades'} coffees={<BagCoffee units={4}/>} arrow={<ArrowRigth color={'black'} text={'Ver todos'}/>}/>
+      <SectionFrameCoffe location={'home'} title={'Novedades'} coffees={<BagCoffee units={4}/>} arrow={<ArrowRigth color={'black'} text={'Ver todos'}/>}/>
       <SectionFaq/>
       <SectionFeature/>
       <SectionForm></SectionForm>

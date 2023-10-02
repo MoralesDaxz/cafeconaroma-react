@@ -12,7 +12,7 @@ export const NavBar = () => {
 
     return (
         <>
-            <nav className=' text-[#FFFFFF] py-3 px-10 bg-[#2B2A2B] h-16 flex flex-row items-center justify-between min-w-full'>
+            <nav className='fixed z-10 text-[#FFFFFF] py-3 px-10 bg-[#2B2A2B] h-16 flex flex-row items-center justify-between min-w-full'>
                 <LogoCafe/>
                 <SectionWrapLinks style={'nav'}/>
                 <div className='flex flex-row items-center justify-between '>

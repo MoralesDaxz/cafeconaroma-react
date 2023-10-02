@@ -9,7 +9,7 @@ export const Basket = () => {
   const prod = 2
   return (
     <>
-      <div className='bg-[#F7F5F3] flex flex-col items-center p-10'>
+      <div className='bg-[#F7F5F3] flex flex-col items-center px-10  pb-10 pt-[7rem]'>
         <h2 className=' mb-6 font-medium text-2xl text-[#2A5B45]'>Cesta({prod})</h2>
         <div className='w-full  flex flex-row gap-6 '>
           <div className='w-[70%] px-2'>

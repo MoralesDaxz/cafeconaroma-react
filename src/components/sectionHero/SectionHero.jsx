@@ -7,7 +7,7 @@ export const SectionHero = () => {
     return (
         <>
          
-            <section className="h-[486px] flex flex-row justify-center py-12 px-10 gap-6">
+            <section className=" flex flex-row justify-center pt-[8rem] pb-12 px-10 gap-6">
                 <article className='flex flex-col justify-center gap-4 w-[588px]'>
                     <div className='text-[#2A5B45] font-semibold text-lg w-[588px] h-6'>
                         <p>De la planta a tu taza</p>

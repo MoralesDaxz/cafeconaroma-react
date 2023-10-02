@@ -1,7 +1,7 @@
 import { React, useContext } from 'react'
 import { Button } from '../button/Button'
 import { ContextCoffe } from '../../context/ContextCoffeProduct.jsx'
-export const BagCoffee = ({ units = 8 }) => {
+export const BagCoffee = ({ units }) => {
   const { products, setProducts } = useContext(ContextCoffe);
 
   return (
@@ -14,7 +14,7 @@ export const BagCoffee = ({ units = 8 }) => {
               <img src={item.img_url} />
               <p className='text-black font-semibold'>{item.brand}</p>
               <p className='text-black'>{item.price},00 €</p>
-              <Button  add={'true'} id={item._id} name={item.brand} img={item.img_url} price={item.price} style={' p-2 rounded font-semibold text-sm text-white cursor-pointer bg-[#2a5b45b3] group-hover/bagCoffee:bg-[#2A5B45]'} text={'Añadir'} />
+              <Button  add={'addCoffee'} id={item._id} name={item.brand} img={item.img_url} price={item.price} style={' p-2 rounded font-semibold text-sm text-white cursor-pointer bg-[#2a5b45b3] group-hover/bagCoffee:bg-[#2A5B45]'} text={'Añadir'} />
             </div>
           )
         } else {
