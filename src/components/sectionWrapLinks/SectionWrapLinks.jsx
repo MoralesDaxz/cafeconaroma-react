@@ -1,10 +1,12 @@
 import React from 'react'
 import { Link } from "react-router-dom";
-const defaultStyle = 'flex flex-row items-center my-4 w-[512px] gap-4 font-medium'
-export const SectionWrapLinks = ({style=defaultStyle}) => {
+
+const navBartStyle = 'flex flex-row items-center my-4 w-[512px] gap-4 font-medium'
+const footertStyle = 'flex flex-col gap-4 font-medium text-sm'
+export const SectionWrapLinks = ({style}) => {
   return (
 
-    <div className={style}>
+    <div className={style=== 'nav'?navBartStyle:style=== 'footer'?footertStyle:''}> {/* Ternario multiple */}
       <Link to={'/store'} className='cursor-pointer'>Tienda</Link>
       <Link to={'Suscripcion'} className='cursor-pointer'>Suscripción</Link>
       <Link to={'/Empresa'} className='cursor-pointer'>Para empresas</Link>

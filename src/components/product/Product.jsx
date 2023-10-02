@@ -1,10 +1,13 @@
-import React from 'react'
+import {React,useContext} from 'react'
 import { DetailBag } from '../detailBag/DetailBag'
-export const Product = ({ indice,nombre, imagen, precio,signos ,cantidad}) => {
+
+import { ContextLocal } from '../../context/ContextLocal'
+export const Product = ({ id,nombre, imagen, precio,signos ,cantidad,line}) => {
+/*   const { infLocalContext, setinfLocalContext } = useContext(ContextLocal);   */
   //componente se utlizara sin signo en pagina de PAGO
     return (
         <>
-            <div key={indice} className='flex flex-row justify-between'>
+            <div key={id} className='flex flex-row justify-between'>
                 <div className='flex flex-row gap-6'>
                    {signos}
                     <div className='flex flex-row justify-center items-center w-14 h-14'><img src={imagen} alt="" /> </div>
@@ -15,6 +18,7 @@ export const Product = ({ indice,nombre, imagen, precio,signos ,cantidad}) => {
                 </div>
                 <p className='w-fit'>{precio * cantidad},00 €</p>
             </div>
+            {line}
 
 
         </>

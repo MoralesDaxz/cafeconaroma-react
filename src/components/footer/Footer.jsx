@@ -26,7 +26,7 @@ export const Footer = () => {
                         </div>
                         <div className='w-[50%] flex flex-row gap-[127px]'>
                             <div>
-                            <SectionWrapLinks style={'flex flex-col gap-4 font-medium text-sm'} />
+                            <SectionWrapLinks style={'footer'} />
                             </div>
                             <div className='flex flex-col gap-4'>
                                <Link to={'/Privacidad'} ><p className=' font-medium text-sm cursor-pointer'>Política de privacidad</p></Link> 
