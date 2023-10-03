@@ -1,6 +1,7 @@
 import { React, useState, createContext } from "react";
 
 export const ContextLocal = createContext({});
+const infoLocalStorage = JSON.parse(localStorage.getItem("buys")) || [];
 
 export function ContextLocalProvide({ children }) {
     const [infLocalContext, setinfLocalContext] = useState([
