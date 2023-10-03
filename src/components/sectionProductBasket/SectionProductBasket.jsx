@@ -4,13 +4,13 @@ import { AddOrSubs } from '../addOrSubs/AddOrSubs'
 import { ContextLocal } from '../../context/ContextLocal'
 export const SectionProductBasket = () => {
   const { infLocalContext, setinfLocalContext } = useContext(ContextLocal); 
-  const infoLocalStorage = JSON.parse(localStorage.getItem("buys")) || [];
+  /* const infoLocalStorage = JSON.parse(localStorage.getItem("buys")) || []; */
   //section envia a PRODUCT componente con signos si queremos renderizar los signos
   return (
     <>
       <div className='flex flex-col gap-6 mb-6'>
       {
-            infoLocalStorage?.map((item, indice) => {
+            infLocalContext?.map((item, indice) => {
               
               if (item.cantidad >0 && indice >=0) {
                 

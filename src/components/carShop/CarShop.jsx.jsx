@@ -8,8 +8,9 @@ import { Link } from 'react-router-dom';
 
 export const CarShop = () => {
   const { infLocalContext, setinfLocalContext } = useContext(ContextLocal);
+/*   const infoLocalStorage = JSON.parse(localStorage.getItem("buys")) || []; */
   const [showModal, setshowModal] = useState('hidden')
-  const infoLocalStorage = JSON.parse(localStorage.getItem("buys")) || [];
+
 
   const checkClass = () => {
     if (showModal === 'hidden') {
@@ -32,7 +33,7 @@ export const CarShop = () => {
         <div className='text-black flex flex-col gap-3'>
           { 
           
-          infoLocalStorage?.map((item, indice) => {
+          infLocalContext?.map((item, indice) => {
 
               if (item.cantidad > 0 && indice >= 0) {
 

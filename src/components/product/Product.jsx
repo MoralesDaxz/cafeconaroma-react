@@ -16,9 +16,7 @@ export const Product = ({ id,nombre, imagen, precio,signos ,cantidad,line}) => {
                         <DetailBag></DetailBag>
                     </div>
                 </div>
-                {/* Number.parseFloat(x).toFixed(2) */}
-                {/*  <p className='w-fit'>{ precio * cantidad},00 €</p> */}
-                <p className='w-fit'>{Number.parseFloat(precio * cantidad).toFixed(2).replace('.',',')} €</p>
+                <p className='w-fit'>{Number.parseFloat(precio).toFixed(2).replace('.',',')} €</p>
             </div>
             {line}
 
