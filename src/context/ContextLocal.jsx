@@ -5,7 +5,7 @@ export const ContextLocal = createContext({});
 const infoLocalStorage = JSON.parse(localStorage.getItem("buys")) || [];
 
 export function ContextLocalProvide({ children }) {
-    const [subtotalContext, setsubtotalContext] = useState({});
+    const [totalContext, settotalContext] = useState(0);
     const [infLocalContext, setinfLocalContext] = useState(infoLocalStorage);
 
     useEffect(() => {localStorage.setItem('buys', JSON.stringify(infLocalContext))
@@ -20,7 +20,7 @@ export function ContextLocalProvide({ children }) {
 }, [infoLocalStorage])
 
     return (
-        <ContextLocal.Provider value={{ infLocalContext,subtotalContext, setinfLocalContext,setsubtotalContext }}>
+        <ContextLocal.Provider value={{ infLocalContext,totalContext, setinfLocalContext,settotalContext }}>
             {children}
         </ContextLocal.Provider>
     )
