@@ -1,7 +1,8 @@
-import {React} from 'react'
+import {React,useContext} from 'react'
+import { ContextLocal } from '../../context/ContextLocal';
 
-export const SectionDelivery = ({setpriceDelivery}) => {
-
+export const SectionDelivery = () => {
+  const { setpriceDelivery} = useContext(ContextLocal);
 
   return (
     <>

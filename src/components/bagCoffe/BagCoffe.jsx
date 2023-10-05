@@ -2,6 +2,7 @@ import { React, useContext } from 'react'
 import { Button } from '../button/Button'
 import { ContextCoffe } from '../../context/ContextCoffeProduct.jsx'
 export const BagCoffee = ({ units }) => {
+  
   const { products, setProducts } = useContext(ContextCoffe);
 
   return (

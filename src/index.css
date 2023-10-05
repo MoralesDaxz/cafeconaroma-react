@@ -2,6 +2,19 @@
 @tailwind components;
 @tailwind utilities;
 
+
+  .scrollbar-hidden {
+    scrollbar-width: thin; /* For Firefox */
+    -ms-overflow-style: none; /* For Internet Explorer and Edge */
+    scrollbar-color: transparent transparent; /* For Firefox (thumb and track) */
+  }
+
+  .scrollbar-hidden::-webkit-scrollbar {
+    width: 0;
+  }
+
+
+
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -54,28 +67,16 @@ body {
   display: none;
 }
 
-.carrito /* carrito */
-{
-    width: 450px;
-    position: fixed;
-    top: 90px;
-    right:4px;
-    display: flex;
-    flex-direction: column;
-    
 
-    background-color: rgba(230, 229, 229, 0.7);
-    z-index: 1001;
-    border-radius: 10px;
-    gap: 2%;
-    overflow-y:auto;
-    height:250px;
-    backdrop-filter: blur(3px) saturate(120%);
-}
 .shadowElement{
   border-radius: 19px;
   box-shadow: 5px 5px 6px #a5a5a5,
   -5px -5px 6px #9b9a9a;  
+}
+.shadowModalCar{
+  border-radius: 15px;
+  box-shadow: 5px 5px 5px #a5a5a594,
+  -5px -5px 5px #9b9a9a4b;  
 }
 .inputForm{
   border-radius: 6px;

@@ -6,12 +6,13 @@ export default {
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-   /*  colors:{
-      'verde1':'rgba(42, 91, 69, 0.7)'
-    }, */
-    extend: {},
+  
+    extend: {
+     
+    },
   },
   plugins: [
+  
     
   ],
 }

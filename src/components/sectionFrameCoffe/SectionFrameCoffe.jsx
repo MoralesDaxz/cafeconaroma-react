@@ -7,7 +7,7 @@ const styleTopHome = 'p-10  bg-[white]  flex flex-col justify-center items-cente
 
 export const SectionFrameCoffe = ({coffees,arrow,title,location}) => {
 
-  const unit = 4/*Control de productos mostrados*/
+
   return (
     <>
       <div className={location==='home'?styleTopHome:location==='store'?styleTopStore:''}>
