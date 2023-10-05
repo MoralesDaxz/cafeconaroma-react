@@ -21,11 +21,10 @@ export const CarShop = () => {
       setinfLocalContext([])
     }
   }
-
   return (
     <>
 
-      <div id='car' onClick={(e) => showModal === 'hidden' ? setshowModal('shopping') : setshowModal('hidden')} className="w-[50px] cursor-pointer flex flex-row justify-center items-center">
+      <div id='car' onClick={() => showModal === 'hidden' ? setshowModal('shopping') : setshowModal('hidden')} className="w-[50px] cursor-pointer flex flex-row justify-center items-center">
         <img src={iconCar} />
         <div className=' self-start rounded-[25px] w-5 text-center bg-white font-medium text-sm text-black'>{reduceContext.cantidad}</div>
       </div>
@@ -35,7 +34,7 @@ export const CarShop = () => {
         {/* -----------titulo---------------- */}
         <div className={'flex flex-row  justify-between items-start p-2 mx-3'}>
           <div className='flex flex-col cursor-pointer items-center justify-end text-gray-500 text-[.6rem]'>
-            <img id='close' onClick={(e) => showModal === 'shopping' ? setshowModal('hidden') : setshowModal('hidden')} className='w-6' src={iconMin} />
+            <img id='close' onClick={() => showModal === 'shopping' ? setshowModal('hidden') : setshowModal('hidden')} className='w-6' src={iconMin} />
             <p>Cerrar</p>
           </div>
           {totalContext !== 0 ? <div onClick={() => { setBuyContext() }} className='flex flex-col items-center justify-end cursor-pointer'>
@@ -52,7 +51,6 @@ export const CarShop = () => {
 
         </div>
 
-        {/* --------------------------- */}
         <div className={'w-[450px] h-[300px] p-[1rem] overflow-auto scrollbar-hidden g-[.6rem]'}>
 
           <div className='text-black flex flex-col   gap-3'>

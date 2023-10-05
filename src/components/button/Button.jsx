@@ -10,7 +10,7 @@ export const Button = ({ text, style, key, id, name, price, img, add, bg }) => {
   const infoLocalStorage = JSON.parse(localStorage.getItem("buys")) || [];
   const buysLSFiltered = infoLocalStorage.filter(item => item.cantidad !== 0);
   const productExisting = infoLocalStorage.find(item => item.nombre === buy.nombre);
-
+ 
   function clearZerosLS() {
 
     localStorage.setItem("buys", JSON.stringify(buysLSFiltered));

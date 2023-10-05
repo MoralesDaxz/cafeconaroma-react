@@ -2,10 +2,9 @@ import { React, useContext } from 'react'
 import sumaImg from '../../assets/iconSuma.png'
 import restaImg from '../../assets/iconResta.png'
 import { Button } from '../button/Button'
-import { ContextLocal } from '../../context/ContextLocal'
+
 /* Componente con (+) cantidad (-) */
 export const AddOrSubs = ({ cantidad,nombre, id,precio,imagen }) => {
-  const { infLocalContext, setinfLocalContext } = useContext(ContextLocal);  
 
   return (
     <>

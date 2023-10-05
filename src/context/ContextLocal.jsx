@@ -16,12 +16,16 @@ export function ContextLocalProvide({ children }) {
         return accumulator
     }, { cantidad: 0, precio: 0 });
 
+
     useEffect(() => {
         localStorage.setItem('buys', JSON.stringify(infLocalContext))
         if (resultReduce.cantidad > 0) {//Evaluamos si hay producto ? agregamos valor producto + envio, : muestra solo 9€ en basket sin afectar el total
             settotalContext(Number.parseFloat(reduceContext.precio + priceDelivery).toFixed(2).replace('.', ','))
             setivaContext(((reduceContext.precio + priceDelivery) * 21) / 100)
-        }else{settotalContext(0)}
+        } else {
+            settotalContext(0)
+            setivaContext(0)
+        }
     }, [infoLocalStorage])
     useEffect(() => {//evitamos multiple rederizacion, al cambiar lo que traemos de LS setea un nuevo resulReduce
         setreduceContext(resultReduce)
