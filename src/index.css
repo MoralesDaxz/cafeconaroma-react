@@ -93,7 +93,6 @@ body {
   border: 2px solid #3F8F6B;
 }
 .textareaForm{
-  
   border-radius: 6px;
   border: 1px solid #D1D5DB;
   outline: none;
@@ -104,4 +103,42 @@ body {
 }
 .textareaForm:focus{
   border: 2px solid #3F8F6B;
+}
+
+.inputTjDebito{
+display: flex;
+flex-direction: column;
+gap: 3px;
+
+}
+.inputTjDebito label{
+  font-weight: 400;
+  font-size: 12px;
+}
+.inputTjDebito input{
+  padding: 10px 8px;
+  border: 1px solid #D1D5DB;
+  margin: 0px;
+  border-radius: 6px;
+  width: 100%;
+}
+.inputTjDebito input::placeholder{
+  color: #515051;
+}
+.inputTjDebito select {
+  background-image: url('../src/assets/selectDown.svg');
+  appearance: none;
+  background-repeat: no-repeat;
+  background-position: 98% 50%;
+  color: #515051;
+ 
+  height: 42px;
+  border: 1px solid #D1D5DB;
+  margin: 0px;
+  border-radius: 6px;
+  width: 100%;
+  padding: 10px 8px;
+}
+.inputTjDebito option {
+  border: 1px solid #D1D5DB;
 }

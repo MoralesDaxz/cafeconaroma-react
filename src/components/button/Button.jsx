@@ -34,12 +34,13 @@ export const Button = ({ text, style, key, id, name, price, img, add, bg }) => {
       if (productExisting.cantidad >= 1) {
         productExisting.cantidad -= buy.cantidad;
         productExisting.precio =  productExisting.cantidad*buy.precio
-      } else if (productExisting.cantidad < 1 || productExisting.cantidad == 0) {
+      } else if (productExisting.cantidad < 1 || productExisting.cantidad === 0) {
         localStorage.setItem('buys', JSON.stringify(infoLocalStorage.filter(item => item.cantidad !== 0)));
       }
       localStorage.setItem("buys", JSON.stringify(infoLocalStorage.filter(item => item.cantidad !== 0)));
     }
-    setinfLocalContext([...infoLocalStorage])
+
+     setinfLocalContext([...infoLocalStorage]) 
   }
   return (
     <div

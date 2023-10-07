@@ -2,7 +2,6 @@ import React from 'react'
 import iconTlf from '../../assets/iconTlf.svg'
 import iconMail from '../../assets/footer-email.svg'
 import { SectionWrapLinks } from '../sectionWrapLinks/SectionWrapLinks'
-import { CopyRight } from '../copyRight/CopyRight'
 import { LogoCafe } from '../logoCafe/LogoCafe'
 import { Link } from 'react-router-dom'
 export const Footer = () => {
@@ -34,10 +33,8 @@ export const Footer = () => {
                                 <Link to={'/Terminos'}><p className=' font-medium text-sm cursor-pointer'>Términos y condiciones</p></Link>
                             </div>
                         </div>
-
                     </div>
                 </div>
-                <CopyRight></CopyRight>
             </div>
         </>
     )

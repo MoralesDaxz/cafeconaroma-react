@@ -10,11 +10,12 @@ import { Suscripcion } from './pages/Suscripcion';
 import { Nosotros } from './pages/Nosotros';
 import { Contacto } from './pages/Contacto';
 import { Cookies } from './pages/Cookies';
-import { Carrito } from './pages/carrito';
 import { Origenes } from './pages/Origenes';
 import { Privacidad } from './pages/Privacidad';
 import { Terminos } from './pages/Terminos';
 import {Basket} from './pages/Basket';
+import { Checkout } from './pages/Checkout';
+import { CopyRight } from './components/copyRight/CopyRight';
 function App() {
   
   return (
@@ -25,7 +26,6 @@ function App() {
     <Routes>
     <Route path='/login' element={<Login/>}></Route> 
     <Route path='/' element={<Home/>}></Route>
-    <Route path='/Carrito' element={<Carrito/>}></Route>
     <Route path='/Contacto' element={<Contacto/>}></Route>
     <Route path='/Cookies' element={<Cookies/>}></Route>
     <Route path='/Empresa' element={<Empresa/>}></Route>
@@ -36,7 +36,9 @@ function App() {
     <Route path='/Suscripcion' element={<Suscripcion/>}></Route>
     <Route path='/Terminos' element={<Terminos/>}></Route>
     <Route path='/Cesta' element={<Basket/>}></Route>
+    <Route path='/Check' element={<Checkout/>}></Route>
     </Routes>
+    <CopyRight/>
     </BrowserRouter>
     
      {/*   */}

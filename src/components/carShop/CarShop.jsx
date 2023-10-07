@@ -30,7 +30,7 @@ export const CarShop = () => {
       </div>
 
       {/* --------------------------- */}
-      <div id='modal' onMouseLeave={() => setshowModal('hidden')} className={showModal === 'shopping' ? ' flex flex-col fixed top-[5rem] w-[450px] h-[310px] right-[50px] border-solid border-2 border-[#55a07e] bg-[#eff5e8ea] rounded-[8px] shadowModalCar' : 'hidden'}>
+      <div id='modal' onMouseLeave={() => setshowModal('hidden')} className={showModal === 'shopping' ? ' flex flex-col fixed z-50 top-[5rem] w-[450px] h-[310px] right-[50px] border-solid border-2 border-[#55a07e] bg-[#eff5e8ea] rounded-[8px] shadowModalCar' : 'hidden'}>
         {/* -----------titulo---------------- */}
         <div className={'flex flex-row  justify-between items-start p-2 mx-3'}>
           <div className='flex flex-col cursor-pointer items-center justify-end text-gray-500 text-[.6rem]'>

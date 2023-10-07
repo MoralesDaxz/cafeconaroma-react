@@ -53,7 +53,7 @@ export const SectionForm = () => {
                 </div>
 
             </div>
-            <Footer></Footer>
+            <Footer/>
         </>
     )
 }

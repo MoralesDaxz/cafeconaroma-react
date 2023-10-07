@@ -13,11 +13,11 @@ export const Home = () => {
   return (
     <>
       <SectionHero/>
-      <SectionCardsInfo></SectionCardsInfo>
+      <SectionCardsInfo/>
       <SectionFrameCoffe location={'home'} title={'Novedades'} coffees={<BagCoffee units={4}/>} arrow={<ArrowRigth color={'black'} text={'Ver todos'}/>}/>
       <SectionFaq/>
       <SectionFeature/>
-      <SectionForm></SectionForm>
+      <SectionForm/>
     </>
   )
 }
