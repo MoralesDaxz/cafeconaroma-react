@@ -32,6 +32,7 @@ export const CarShop = () => {
       {/* --------------------------- */}
       <div id='modal' onMouseLeave={() => setshowModal('hidden')} className={showModal === 'shopping' ? ' flex flex-col fixed z-50 top-[5rem] w-[450px] h-[310px] right-[50px] border-solid border-2 border-[#55a07e] bg-[#eff5e8ea] rounded-[8px] shadowModalCar' : 'hidden'}>
         {/* -----------titulo---------------- */}
+        <h3 className=' text-center text-lg font-medium text-black'>Carrito de compras</h3>
         <div className={'flex flex-row  justify-between items-start p-2 mx-3'}>
           <div className='flex flex-col cursor-pointer items-center justify-end text-gray-500 text-[.6rem]'>
             <img id='close' onClick={() => showModal === 'shopping' ? setshowModal('hidden') : setshowModal('hidden')} className='w-6' src={iconMin} />
@@ -43,7 +44,7 @@ export const CarShop = () => {
           </div> : ''}
 
           {totalContext !== 0 ? <Link to={'/Cesta'} className='cursor-pointer flex flex-row items-end gap-2 border-solid border-b-2 border-[#55a07e]'>
-            {priceDelivery !== 0 ? <h2 className='font-medium text-base text-black  text-center ' >Envio urgente - Pagar</h2> : <h2 className='font-medium text-base text-black  text-center '>Pagar</h2>}
+            {priceDelivery !== 0 ? <h2 className='font-medium text-base text-black  text-center ' >Urgente - ir a Cesta</h2> : <h2 className='font-medium text-base text-black  text-center '>ir a Cesta</h2>}
 
             <img className='w-8 ' src={priceDelivery === 0 ? iconCarPay : iconCarFast} />
             <p className=' text-base text-black font-medium'>{totalContext} €</p>
@@ -89,8 +90,6 @@ export const CarShop = () => {
             </div>}
           </div>
         </div>
-
-
       </div>
 
     </>

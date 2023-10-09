@@ -4,15 +4,12 @@ import { ContextLocal } from '../../context/ContextLocal'
 export const Button = ({ text, style, key, id, name, price, img, add, bg }) => {
 
   const [buy, setBuy] = useState({ cantidad: 1, nombre: name, precio: price, imagen: img, id: id })
-
   const {  setinfLocalContext } = useContext(ContextLocal);
-
   const infoLocalStorage = JSON.parse(localStorage.getItem("buys")) || [];
   const buysLSFiltered = infoLocalStorage.filter(item => item.cantidad !== 0);
   const productExisting = infoLocalStorage.find(item => item.nombre === buy.nombre);
  
   function clearZerosLS() {
-
     localStorage.setItem("buys", JSON.stringify(buysLSFiltered));
   }
   clearZerosLS() //cada interaccion con el componente validara cantidades en LS

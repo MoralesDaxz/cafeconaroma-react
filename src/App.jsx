@@ -2,7 +2,7 @@ import React from 'react'
 import './App.css'
 import { Home } from './pages/Home'
 import {Store} from './pages/Store'
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, } from "react-router-dom";
 import { NavBar } from './components/navBar/NavBar';
 import { Empresa } from './pages/Empresa';
 import {Login} from './pages/Login'
@@ -16,14 +16,16 @@ import { Terminos } from './pages/Terminos';
 import {Basket} from './pages/Basket';
 import { Checkout } from './pages/Checkout';
 import { CopyRight } from './components/copyRight/CopyRight';
+import { CarShop } from './components/carShop/CarShop';
 function App() {
   
   return (
     <>
-    
+
     <BrowserRouter>
     <NavBar/>
     <Routes>
+  
     <Route path='/login' element={<Login/>}></Route> 
     <Route path='/' element={<Home/>}></Route>
     <Route path='/Contacto' element={<Contacto/>}></Route>
@@ -37,6 +39,7 @@ function App() {
     <Route path='/Terminos' element={<Terminos/>}></Route>
     <Route path='/Cesta' element={<Basket/>}></Route>
     <Route path='/Check' element={<Checkout/>}></Route>
+
     </Routes>
     <CopyRight/>
     </BrowserRouter>

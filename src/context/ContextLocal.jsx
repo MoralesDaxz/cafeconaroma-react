@@ -30,6 +30,13 @@ export function ContextLocalProvide({ children }) {
     useEffect(() => {//evitamos multiple rederizacion, al cambiar lo que traemos de LS setea un nuevo resulReduce
         setreduceContext(resultReduce)
     }, [infLocalContext])
+    useEffect(() => {
+
+        // Limpiar localStorage al cargar el componente
+      
+        setinfLocalContext([])
+        localStorage.setItem("formulario", JSON.stringify([]));
+      }, [window]);
 
     return (
         <ContextLocal.Provider value={{
@@ -37,7 +44,8 @@ export function ContextLocalProvide({ children }) {
             totalContext, settotalContext,
             ivaContext, setivaContext,
             reduceContext, setreduceContext,
-            priceDelivery, setpriceDelivery
+            priceDelivery, setpriceDelivery,
+          
         }}>
             {children}
         </ContextLocal.Provider>

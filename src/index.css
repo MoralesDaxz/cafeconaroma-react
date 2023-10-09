@@ -3,58 +3,147 @@
 @tailwind utilities;
 
 
-  .scrollbar-hidden {
-    scrollbar-width: thin; /* For Firefox */
-    -ms-overflow-style: none; /* For Internet Explorer and Edge */
-    scrollbar-color: transparent transparent; /* For Firefox (thumb and track) */
-  }
-
-  .scrollbar-hidden::-webkit-scrollbar {
-    width: 0;
-  }
-
-
-
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed,
-figure, figcaption, footer, header, hgroup,
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
-margin: 0;
-padding: 0;
-border: 0;
-font-size: 100%;
-font: inherit;
-vertical-align: baseline;
+.scrollbar-hidden {
+  scrollbar-width: thin;
+  /* For Firefox */
+  -ms-overflow-style: none;
+  /* For Internet Explorer and Edge */
+  scrollbar-color: transparent transparent;
+  /* For Firefox (thumb and track) */
 }
+
+.scrollbar-hidden::-webkit-scrollbar {
+  width: 0;
+}
+
+
+
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
 /* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure,
-footer, header, hgroup, menu, nav, section {
-display: block;
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
 }
 
-ol, ul {
-list-style: none;
+ol,
+ul {
+  list-style: none;
 }
-blockquote, q {
-quotes: none;
+
+blockquote,
+q {
+  quotes: none;
 }
-blockquote:before, blockquote:after,
-q:before, q:after {
-content: '';
-content: none;
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: '';
+  content: none;
 }
+
 table {
-border-collapse: collapse;
-border-spacing: 0;
+  border-collapse: collapse;
+  border-spacing: 0;
+
 }
 
 body {
@@ -63,75 +152,120 @@ body {
   min-width: 1200px;
   line-height: 1;
 }
+
 .hidden {
   display: none;
 }
 
 
-.shadowElement{
+.shadowElement {
   border-radius: 19px;
   box-shadow: 5px 5px 6px #a5a5a5,
-  -5px -5px 6px #9b9a9a;  
+    -5px -5px 6px #9b9a9a;
 }
-.shadowModalCar{
+
+.shadowModalCar {
   border-radius: 15px;
   box-shadow: 5px 5px 5px #a5a5a594,
-  -5px -5px 5px #9b9a9a4b;  
+    -5px -5px 5px #9b9a9a4b;
 }
-.inputForm{
+
+/* height: answer1 ? '80px' : '0px', overflow: 'hidden', transition: 'height 0.6s ease', fontWeight:'400',fontSize:'12px', lineHeight:'16px'  */
+.hidden {
+  transition: .1s ease-in;
+  opacity: 0;
+  height: 0px;
+}
+
+.deployFaq {
+  
+  transition: all;
+  transition: .5s ease;
+  opacity: 1;
+  height: 100px;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 16px;
+  height: 80px;
+}
+
+.inputForm {
   border-radius: 6px;
-  height: 34px;
   width: 100%;
   border: 1px solid #D1D5DB;
   outline: none;
-  padding: 17px;
+  padding: 9px 13px;
 }
-.inputForm:hover{
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.inputForm select {
+  outline: none;
+}
+
+input[type="number"] {
+  -moz-appearance: textfield;
+  /* Firefox */
+}
+
+.inputForm:hover {
   border: 1px solid #9B9EA3;
 }
-.inputForm:focus{
+
+.inputForm:focus,
+.inputForm:focus-within {
   border: 2px solid #3F8F6B;
 }
-.textareaForm{
+
+.textareaForm {
   border-radius: 6px;
   border: 1px solid #D1D5DB;
   outline: none;
   padding: 17px;
 }
-.textareaForm:hover{
+
+.textareaForm:hover {
   border: 1px solid #9B9EA3;
 }
-.textareaForm:focus{
+
+.textareaForm:focus {
   border: 2px solid #3F8F6B;
 }
 
-.inputTjDebito{
-display: flex;
-flex-direction: column;
-gap: 3px;
+.inputTjDebito {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
 
 }
-.inputTjDebito label{
+
+.inputTjDebito label {
   font-weight: 400;
   font-size: 12px;
 }
-.inputTjDebito input{
+
+.inputTjDebito input {
   padding: 10px 8px;
   border: 1px solid #D1D5DB;
   margin: 0px;
   border-radius: 6px;
   width: 100%;
 }
-.inputTjDebito input::placeholder{
+
+.inputTjDebito input::placeholder {
   color: #515051;
 }
+
 .inputTjDebito select {
   background-image: url('../src/assets/selectDown.svg');
   appearance: none;
   background-repeat: no-repeat;
   background-position: 98% 50%;
   color: #515051;
- 
   height: 42px;
   border: 1px solid #D1D5DB;
   margin: 0px;
@@ -139,6 +273,7 @@ gap: 3px;
   width: 100%;
   padding: 10px 8px;
 }
+
 .inputTjDebito option {
   border: 1px solid #D1D5DB;
 }

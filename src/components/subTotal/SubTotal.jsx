@@ -1,7 +1,4 @@
 import { React, useContext, useEffect,useState } from 'react'
-
-import {  getQuantityFunction } from '../../utils/getQuantity';
-
 export const SubTotal = ({precio}) => {
 
 

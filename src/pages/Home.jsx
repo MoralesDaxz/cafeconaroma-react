@@ -1,4 +1,4 @@
-import React from 'react'
+import {React,useEffect} from 'react'
 
 import { SectionHero } from '../components/sectionHero/SectionHero.jsx'
 import { SectionFaq } from '../components/sectionFaq/SectionFaq'
@@ -10,6 +10,9 @@ import { BagCoffee } from '../components/bagCoffe/BagCoffe'
 import { ArrowRigth } from '../components/arrowRigth/ArrowRigth.jsx'
 
 export const Home = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   return (
     <>
       <SectionHero/>

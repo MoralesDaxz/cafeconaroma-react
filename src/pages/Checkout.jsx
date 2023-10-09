@@ -5,7 +5,13 @@ import iconBizum from '../assets/bizum.png'
 import { Button } from '../components/button/Button';
 import { SectionBasket } from '../components/sectionBasket/SectionBasket';
 import { ContextLocal } from "../context/ContextLocal";
+import { paises } from '../../src/utils/paises.js'
 export const Checkout = () => {
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+  
   const { infLocalContext, setinfLocalContext,
     totalContext, settotalContext,
     ivaContext, setivaContext,
@@ -22,7 +28,7 @@ export const Checkout = () => {
               <h3 className=' font-semibold text-lg'>Seleccionar método de pago</h3>
 
               <form className='flex flex-col gap-6' onSubmit={handleSubmit((data) => {
-                console.log(data);
+          
               })}>
                 <div className='flex flex-row items-center gap-4 text-sm'>
                   <input className=' h-4 w-4 accent-[#2A5B45]' type='radio' name='checkout'></input>
@@ -87,8 +93,13 @@ export const Checkout = () => {
                   </div>
                   <div className='inputTjDebito'>
                     <label>País</label>
-                    <select className='' placeholder=''>
-                    <option value="" disabled selected hidden>Seleccionar</option>
+                    <select className=''>
+                      <option value="0" disabled selected hidden>Seleccionar</option>
+                      {paises.map(item => {
+                        return (
+                          <option value={item.shortName}>{item.shortName}</option>
+                        )
+                      })}
                     </select>
                   </div>
                   <div className='flex flex-row justify-between'>
@@ -146,8 +157,8 @@ export const Checkout = () => {
               <SectionBasket precio={reduceContext.precio} totalyDelivery={totalContext} envio={priceDelivery} />
               <div className='flex flex-row gap-7 mt-4'>
 
-
-                <Link to={'/Check'}> <Button style={'bg-[#2A5B45] opacity-30 hover:opacity-100 w-[196px] h-[40px] flex flex-col justify-center items-center rounded text-[white] font-semibold text-sm'} text={'Pagar y realizar pedido'} /></Link>
+              {reduceContext.cantidad >= 1? <Link to={'/Check'}> <Button style={'bg-[#2A5B45] opacity-30 hover:opacity-100 w-[196px] h-[40px] flex flex-col justify-center items-center rounded text-[white] font-semibold text-sm'} text={'Pagar y realizar pedido'} /></Link>:<Link to={'/store'}> <Button style={'bg-[#2A5B45]  w-[196px] h-[40px] flex flex-col justify-center items-center rounded text-[white] font-semibold text-sm'} text={'Volver a Tienda'} /></Link>}
+               
 
               </div>
             </div>
