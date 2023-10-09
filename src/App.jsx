@@ -17,6 +17,8 @@ import {Basket} from './pages/Basket';
 import { Checkout } from './pages/Checkout';
 import { CopyRight } from './components/copyRight/CopyRight';
 import { CarShop } from './components/carShop/CarShop';
+import { Success } from './pages/Success';
+
 function App() {
   
   return (
@@ -25,7 +27,6 @@ function App() {
     <BrowserRouter>
     <NavBar/>
     <Routes>
-  
     <Route path='/login' element={<Login/>}></Route> 
     <Route path='/' element={<Home/>}></Route>
     <Route path='/Contacto' element={<Contacto/>}></Route>
@@ -39,7 +40,7 @@ function App() {
     <Route path='/Terminos' element={<Terminos/>}></Route>
     <Route path='/Cesta' element={<Basket/>}></Route>
     <Route path='/Check' element={<Checkout/>}></Route>
-
+    <Route path='/Success' element={<Success/>}></Route>
     </Routes>
     <CopyRight/>
     </BrowserRouter>

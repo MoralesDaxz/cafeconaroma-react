@@ -4,7 +4,7 @@ import iconTlf from '../../assets/form-phone.svg'
 import { Footer } from '../footer/Footer'
 import { Link } from 'react-router-dom'
 import { useForm } from 'react-hook-form'
-import { ContextLocal } from '../../context/ContextLocal'
+
 export const SectionForm = () => {
     const [validateLS, setvalidateLS] = useState([])
     /*Mantener Modal -> validateLS.length >1  -> "REGISTRADO", JSON.parse(localStorage.getItem("formulario"))  control cada vez que se vulve a renderizar verifica LS como valor inicial*/
@@ -34,6 +34,7 @@ export const SectionForm = () => {
                     </div>
                     {validateLS.length < 1 ? <div className='w-[50%] bg-white text-[#374151] p-[32px]'>
                         <form onSubmit={handleSubmit((data) => {
+                        
                             setnameRegistred(data.nombre)
                           
                             if (!data.check) {
@@ -91,6 +92,7 @@ export const SectionForm = () => {
 
                             </div>
                         </div>}
+                        
                 </div>
             </div>
             <Footer />
