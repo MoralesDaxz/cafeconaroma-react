@@ -20,7 +20,7 @@ export const BagCoffee = ({ units }) => {
           )
         } else {
           return (
-            <div key={indice} className='cursor-not-allowed opacity-80 border-solid border border-[#E3DED7] rounded-lg p-6 flex flex-col justify-center items-center gap-6  hover:bg-[#6a111133]'>
+            <div key={indice} className='cursor-not-allowed opacity-30 border-solid border border-[#E3DED7] rounded-lg p-6 flex flex-col justify-center items-center gap-6  hover:bg-[#6a111133]'>
               <img src={item.img_url} />
               <p className='text-black font-semibold'>{item.brand}</p>
               <p className='text-black'>{item.price},00 €</p>

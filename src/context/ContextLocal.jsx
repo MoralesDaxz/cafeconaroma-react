@@ -9,6 +9,7 @@ export function ContextLocalProvide({ children }) {
     const [ivaContext, setivaContext] = useState(0);
     const [reduceContext, setreduceContext] = useState(0);
     const [priceDelivery, setpriceDelivery] = useState(0);
+    const [copyGeneral, setCopyGeneral] = useState({})
 
     const resultReduce = infLocalContext.reduce((accumulator, currentValue) => {
         accumulator.precio += currentValue.precio
@@ -45,6 +46,7 @@ export function ContextLocalProvide({ children }) {
             ivaContext, setivaContext,
             reduceContext, setreduceContext,
             priceDelivery, setpriceDelivery,
+            copyGeneral, setCopyGeneral,
           
         }}>
             {children}

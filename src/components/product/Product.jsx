@@ -2,7 +2,7 @@ import {React,useContext} from 'react'
 import { DetailBag } from '../detailBag/DetailBag'
 
 import { ContextLocal } from '../../context/ContextLocal'
-export const Product = ({ id,nombre, imagen, precio,signos ,cantidad,line}) => {
+export const Product = ({ id,nombre, imagen, precio,signos,line, success}) => {
 
 /*   const { infLocalContext, setinfLocalContext } = useContext(ContextLocal);   */
   //componente se utlizara sin signo en pagina de PAGO
@@ -17,7 +17,7 @@ export const Product = ({ id,nombre, imagen, precio,signos ,cantidad,line}) => {
                         <DetailBag></DetailBag>
                     </div>
                 </div>
-                <p className='w-fit'>{Number.parseFloat(precio).toFixed(2).replace('.',',')} €</p>
+                <p className={success?' font-semibold text-lg' :'w-fit'}>{Number.parseFloat(precio).toFixed(2).replace('.',',')} €</p>
             </div>
             {line}
 

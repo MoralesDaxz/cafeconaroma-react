@@ -11,8 +11,10 @@ export const Basket = () => {
             totalContext, settotalContext,
             ivaContext, setivaContext,
             reduceContext, setreduceContext,
-            priceDelivery, setpriceDelivery } = useContext(ContextLocal);
-
+            priceDelivery, setpriceDelivery, 
+            copyGeneral, setCopyGeneral,
+          } = useContext(ContextLocal);
+     
             useEffect(() => {
               window.scrollTo(0, 0);
             }, []);
