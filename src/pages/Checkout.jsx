@@ -1,6 +1,6 @@
 import { React, useContext, useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
-import { Link } from "react-router-dom";
+import { Link,Navigate } from "react-router-dom";
 import iconBizum from "../assets/bizum.png";
 import { Button } from "../components/Button";
 import { SectionBasket } from "../components/SectionBasket";
@@ -28,6 +28,7 @@ export const Checkout = () => {
   const {
     register,
     handleSubmit,
+    trigger,
     formState: { errors },
   } = useForm({});
   const [inputKind, setinputKind] = useState(false);
@@ -46,28 +47,22 @@ export const Checkout = () => {
     });
   }, [totalContext || reduceContext.cantidad]);
 
+let test=[]
   const fnOnSubmit = handleSubmit((data) => {
-    setstateCheckoutForm(true);
+    test.push(data)
+    setstateCheckoutForm('habil');
     if (data.inputRadio === "on") {
       data.inputRadio = inputKind;
     }
-    if (
-      inputKind === "tarjeta" &&
-      (data.codigoTj === "" ||
-        data.titularTj === "" ||
-        data.numeroTj === "" ||
-        data.fechaTj === "")
-    ) {
-      setstateCheckoutForm(false);
-    }
     localStorage.setItem("formularioCheckout", JSON.stringify([data]));
     localStorage.setItem("pedido", JSON.stringify(copyGeneral));
+     console.log(data);
+     console.log(test);
   });
 
   return (
     <>
       <div className="bg-[#FFFFFF] w-full min-h-[100vh] flex flex-col items-center px-10 pb-10 pt-[7rem]">
-        {/* 535px */}
         <h2 className=" mb-6 font-medium text-2xl text-[#2A5B45]">Checkout</h2>
         <form className="flex flex-col w-full" onSubmit={fnOnSubmit}>
           <div className="flex flex-row justify-center gap-6">
@@ -191,7 +186,7 @@ export const Checkout = () => {
                       </div>
                       <div className="inputTjDebito">
                         <label>CVC</label>
-                        <input
+                        <input type="password"
                           {...register("codigoTj", {
                             required: {
                               value: true,
@@ -231,8 +226,8 @@ export const Checkout = () => {
               <div
                 className={
                   inputKind === "tarjeta"
-                    ? "w-[98%] h-[1px] bg-[#E3DED7] self-center mt-[24px]"
-                    : "w-[98%] h-[1px] bg-[#E3DED7] self-center "
+                    ? "w-[98%] h-[1px] bg-[#E3DED7] self-center"
+                    : "w-[98%] h-[1px] bg-[#E3DED7] self-center"
                 }
               ></div>
               {/* Jugamos con el gap definido en padre, si se despliega  MT-- sino dejamos el gap del padre */}
@@ -435,7 +430,7 @@ export const Checkout = () => {
                   </select>
                 </div>
 
-                {}
+                { }
                 <div className="flex flex-row justify-between">
                   <div className="inputTjDebito">
                     <label>Población</label>
@@ -604,29 +599,24 @@ export const Checkout = () => {
                     envio={priceDelivery}
                   />
                   <div className="flex flex-row gap-7 mt-4">
-                    {stateCheckoutForm ? (
-                      <Link
-                        to={
-                          stateCheckoutForm && infLocalContext.length > 0
-                            ? "/success"
-                            : "/store"
-                        }
-                      >
-                        <input
+
+                    <Link onClick={()=>{fnOnSubmit();console.log('Click');}} to={stateCheckoutForm==='habil'?'/success':null}> 
+                    <input
                           type="submit"
-                          value={
-                            stateCheckoutForm && infLocalContext.length > 0
-                              ? "Pagar y realizar pedido"
-                              : "Seguir comprando"
-                          }
+                          value={"Pagar y realizar pedido"}
                           className={
                             "bg-[#2A5B45] opacity-30 cursor-pointer hover:opacity-100 w-[196px] h-[40px] flex flex-col justify-center items-center rounded text-[white] font-semibold text-sm"
                           }
-                        />{" "}
-                      </Link>
-                    ) : (
-                      ""
-                    )}
+                        /> 
+                    </Link>
+                        
+
+
+
+                     {/*  {test?.length >=1?<Navigate to={'/success'}></Navigate>:''}  */}
+                     {/*   {<Navigate to={test.length >=1?'/success':null}></Navigate>} */}
+                      {/* <Link  to={test?.length > 0?'/success':null}>  </Link>  */}
+                      
                   </div>
                 </div>
               </div>
