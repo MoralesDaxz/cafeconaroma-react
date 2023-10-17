@@ -1,13 +1,14 @@
 import { React, useContext, useEffect, useState } from 'react'
 import { ContextLocal } from "../context/ContextLocal";
 import { Link } from "react-router-dom";
-import { Product } from '../components/product/Product';
+import { Product } from '../components/Product';
 import cardsCheck from '../assets/check.svg'
-import { SubTotal } from '../components/subTotal/SubTotal';
-import { TotalDelivery } from '../components/totalDelivery/TotalEnvio';
-import { Total } from '../components/total/Total';
-import { TotalIva } from '../components/totalIva/TotalIva';
-import { Button } from '../components/button/Button';
+import { SubTotal } from '../components/SubTotal';
+import { TotalDelivery } from '../components/TotalEnvio';
+import { Total } from '../components/Total';
+import { TotalIva } from '../components/TotalIva';
+import { Button } from '../components/Button';
+
 export const Success = () => {
   const { infLocalContext, setinfLocalContext,
     totalContext, settotalContext,
@@ -16,12 +17,16 @@ export const Success = () => {
     priceDelivery, setpriceDelivery,
     copyGeneral, setCopyGeneral,
   } = useContext(ContextLocal);
-const informacion = JSON.parse(localStorage.getItem('pedido'))
-console.log(informacion);
 
   useEffect(() => {
+    setinfLocalContext([])
+    setpriceDelivery(0)
     window.scrollTo(0, 0);
   }, []);
+
+  const informacion = JSON.parse(localStorage.getItem('pedido'))
+
+ 
 
   return (
     <div className='bg-[#FFFFFF] min-h-[100vh] w-full flex flex-col items-center justify-center px-10 pb-10 pt-[7rem]'>
@@ -58,15 +63,37 @@ console.log(informacion);
             <SubTotal envio={informacion.envio} precioSuccess={informacion.total} />
             <TotalDelivery envio={informacion.envio} />
             <div className='w-[98%] h-[1px] bg-[#E3DED7] self-center'></div>
-            <Total  totalyDelivery={informacion.total} />
+            <Total totalyDelivery={informacion.total} />
             <TotalIva iva={informacion.iva} />
 
           </div>
         </div>
 
-     <Link to={'/Store'}> <Button style={' bg-[#2A5B45] px-[24px] rounded text-[14px] font-[600] text-white py-[12px]'} text={'Volver a la tienda'}></Button></Link> 
+        {/* <div>
+
+<div class="loader">
+  <div class="cell d-0"></div>
+  <div class="cell d-1"></div>
+  <div class="cell d-2"></div>
+
+  <div class="cell d-1"></div>
+  <div class="cell d-2"></div>
+  
+  
+  <div class="cell d-2"></div>
+  <div class="cell d-3"></div>
+  
+  
+  <div class="cell d-3"></div>
+  <div class="cell d-4"></div>
+  
+  
+</div>
+
+</div> */}
+        <Link to={'/store'}> <Button style={' bg-[#2A5B45] px-[24px] rounded text-[14px] font-[600] text-white py-[12px]'} text={'Volver a la tienda'}></Button></Link>
       </div>
-      
+
     </div>
 
   )

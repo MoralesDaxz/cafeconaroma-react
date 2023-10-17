@@ -236,19 +236,32 @@ input[type="number"] {
   border: 2px solid #3F8F6B;
 }
 
+.inputError{
+  color: #b60303;
+  font-size: 11px;
+  font-weight: 500;
+
+}
 .inputTjDebito {
   display: flex;
   flex-direction: column;
   gap: 3px;
-
+}
+.inputTjDebito input:hover{
+  border: 1px solid #9B9EA3;
+}
+.inputTjDebito input:focus,.inputTjDebito input:focus-within{
+  border: 2px solid #3F8F6B;
 }
 
 .inputTjDebito label {
-  font-weight: 400;
+ 
+  font-weight: 500;
   font-size: 12px;
 }
 
 .inputTjDebito input {
+
   padding: 10px 8px;
   border: 1px solid #D1D5DB;
   margin: 0px;
@@ -276,4 +289,99 @@ input[type="number"] {
 
 .inputTjDebito option {
   border: 1px solid #D1D5DB;
+}
+.loader {
+
+  --cell-size: 52px;
+  --cell-spacing: 1px;
+  --cells: 3;
+  --total-size: calc(var(--cells) * (var(--cell-size) + 2 * var(--cell-spacing)));
+  display: flex;
+  flex-wrap: wrap;
+  width: var(--total-size);
+  height: var(--total-size);
+  position: absolute;
+  bottom: 10%;
+  right: 45%;
+
+}
+
+.cell {
+  flex: 0 0 var(--cell-size);
+  margin: var(--cell-spacing);
+  background-color: transparent;
+  box-sizing: border-box;
+  border-radius: 4px;
+  animation: 1.5s ripple ease infinite;
+}
+
+.cell.d-1 {
+  animation-delay: 100ms;
+}
+
+.cell.d-2 {
+  animation-delay: 200ms;
+}
+
+.cell.d-3 {
+  animation-delay: 300ms;
+}
+
+.cell.d-4 {
+  animation-delay: 400ms;
+}
+
+.cell:nth-child(1) {
+  --cell-color: #00FF87;
+}
+
+.cell:nth-child(2) {
+  --cell-color: #0CFD95;
+}
+
+.cell:nth-child(3) {
+  --cell-color: #17FBA2;
+}
+
+.cell:nth-child(4) {
+  --cell-color: #23F9B2;
+}
+
+.cell:nth-child(5) {
+  --cell-color: #30F7C3;
+}
+
+.cell:nth-child(6) {
+  --cell-color: #3DF5D4;
+}
+
+.cell:nth-child(7) {
+  --cell-color: #45F4DE;
+}
+
+.cell:nth-child(8) {
+  --cell-color: #53F1F0;
+}
+
+.cell:nth-child(9) {
+  --cell-color: #60EFFF;
+}
+
+/*Animation*/
+@keyframes ripple {
+  0% {
+    background-color: transparent;
+  }
+
+  30% {
+    background-color: var(--cell-color);
+  }
+
+  60% {
+    background-color: transparent;
+  }
+
+  100% {
+    background-color: transparent;
+  }
 }

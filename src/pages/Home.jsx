@@ -1,13 +1,13 @@
 import {React,useEffect} from 'react'
 
-import { SectionHero } from '../components/sectionHero/SectionHero.jsx'
-import { SectionFaq } from '../components/sectionFaq/SectionFaq'
-import { SectionFeature } from '../components/sectionFeature/SectionFeature'
-import { SectionForm } from '../components/sectionForm/SectionForm.jsx'
-import { SectionCardsInfo } from '../components/sectionCardsInfo/SectionCardsInfo'
-import { SectionFrameCoffe } from '../components/sectionFrameCoffe/SectionFrameCoffe'
-import { BagCoffee } from '../components/bagCoffe/BagCoffe'
-import { ArrowRigth } from '../components/arrowRigth/ArrowRigth.jsx'
+import { SectionHero } from '../components/SectionHero'
+import { SectionFaq } from '../components/SectionFaq'
+import { SectionFeature } from '../components/SectionFeature'
+import { SectionForm } from '../components/SectionForm.jsx'
+import { SectionCardsInfo } from '../components/SectionCardsInfo'
+import { SectionFrameCoffe } from '../components/SectionFrameCoffe'
+import { BagCoffee } from '../components/BagCoffe'
+import { ArrowRigth } from '../components/ArrowRigth.jsx'
 
 export const Home = () => {
   useEffect(() => {

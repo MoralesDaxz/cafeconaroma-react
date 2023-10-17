@@ -1,9 +1,9 @@
 import { React, useContext, useEffect, useState } from 'react'
 import { Link } from "react-router-dom";
-import { SectionProductBasket } from '../components/sectionProductBasket/SectionProductBasket';
-import { SectionDelivery } from '../components/sectionDelivery/SectionDelivery';
-import { Button } from '../components/button/Button';
-import { SectionBasket } from '../components/sectionBasket/SectionBasket';
+import { SectionProductBasket } from '../components/SectionProductBasket';
+import { SectionDelivery } from '../components/SectionDelivery';
+import { Button } from '../components/Button';
+import { SectionBasket } from '../components/SectionBasket';
 import { ContextLocal } from "../context/ContextLocal";
 
 export const Basket = () => {
@@ -35,8 +35,8 @@ export const Basket = () => {
             <div className='bg-[#F7F5F3] w-[30%] p-6 fixed z-60 '>
             <SectionBasket precio={reduceContext.precio} totalyDelivery={totalContext} envio={priceDelivery} />
             <div className='flex flex-row gap-7 mt-4'>
-             {reduceContext.cantidad >= 1? <Link to={'/Check'}> <Button style={'bg-[#2A5B45] w-[129px] h-[40px] flex flex-col justify-center items-center rounded text-[white] font-semibold text-sm'} text={'Ir a checkout'} /></Link> :''} 
-              <Link to={'/Store'}> <Button style={'bg-[transparent] w-[129px] h-[40px] flex flex-col justify-center items-center rounded text-[#2A5B45] font-semibold text-sm'} text={'Seguir comprando'} /></Link>
+             {reduceContext.cantidad >= 1? <Link to={'/check'}> <Button style={'bg-[#2A5B45] w-[129px] h-[40px] flex flex-col justify-center items-center rounded text-[white] font-semibold text-sm'} text={'Ir a checkout'} /></Link> :''} 
+              <Link to={'/store'}> <Button style={'bg-[transparent] w-[129px] h-[40px] flex flex-col justify-center items-center rounded text-[#2A5B45] font-semibold text-sm'} text={'Seguir comprando'} /></Link>
             </div>
           </div>
           </div>

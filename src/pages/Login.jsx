@@ -1,4 +1,4 @@
-import '../../src/login.css'
+import '../login.css'
 import React from 'react'
 import { Link } from 'react-router-dom'
 const spinner = document.getElementById('svgSpinner')
@@ -12,7 +12,6 @@ function loginInv() {
     invTag.classList.add('a0Activo')
     invTag.classList.remove('a0')
     setTimeout(() => {
-
         spinner.classList.remove('spinnerActivo')
         spinner.classList.add('spinner')
         invTag.textContent = 'Invitado' //a0Activo

@@ -1,9 +1,9 @@
 import {React,useEffect} from 'react'
-import { NavBar } from '../components/navBar/NavBar'
-import { Footer } from '../components/footer/Footer'
-import { SectionFrameCoffe } from '../components/sectionFrameCoffe/SectionFrameCoffe'
-import { BagCoffee } from '../components/bagCoffe/BagCoffe'
-import { SectionCardsInfo } from '../components/sectionCardsInfo/SectionCardsInfo'
+import { NavBar } from '../components/NavBar'
+import { Footer } from '../components/Footer'
+import { SectionFrameCoffe } from '../components/SectionFrameCoffe'
+import { BagCoffee } from '../components/BagCoffe'
+import { SectionCardsInfo } from '../components/SectionCardsInfo'
 export const Store = () => {
   useEffect(() => {
     window.scrollTo(0, 0);

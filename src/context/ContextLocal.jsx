@@ -3,20 +3,20 @@ import { React, useState, createContext, useEffect } from "react";
 export const ContextLocal = createContext({});
 
 export function ContextLocalProvide({ children }) {
-    const infoLocalStorage = JSON.parse(localStorage.getItem("buys")) || [];
-    const [infLocalContext, setinfLocalContext] = useState(infoLocalStorage);
+    const datosLocalStorage = JSON.parse(localStorage.getItem("buys")) || [];
+    const [infLocalContext, setinfLocalContext] = useState(datosLocalStorage);
     const [totalContext, settotalContext] = useState(0);
     const [ivaContext, setivaContext] = useState(0);
     const [reduceContext, setreduceContext] = useState(0);
     const [priceDelivery, setpriceDelivery] = useState(0);
     const [copyGeneral, setCopyGeneral] = useState({})
+    const [stateCheckoutForm, setstateCheckoutForm] = useState(false)
 
     const resultReduce = infLocalContext.reduce((accumulator, currentValue) => {
         accumulator.precio += currentValue.precio
         accumulator.cantidad += currentValue.cantidad
         return accumulator
     }, { cantidad: 0, precio: 0 });
-
 
     useEffect(() => {
         localStorage.setItem('buys', JSON.stringify(infLocalContext))
@@ -27,17 +27,17 @@ export function ContextLocalProvide({ children }) {
             settotalContext(0)
             setivaContext(0)
         }
-    }, [infoLocalStorage])
+    }, [datosLocalStorage])
+
     useEffect(() => {//evitamos multiple rederizacion, al cambiar lo que traemos de LS setea un nuevo resulReduce
         setreduceContext(resultReduce)
     }, [infLocalContext])
-    useEffect(() => {
 
+    useEffect(() => {
         // Limpiar localStorage al cargar el componente
-      
         setinfLocalContext([])
         localStorage.setItem("formulario", JSON.stringify([]));
-      }, [window]);
+    }, [window]);
 
     return (
         <ContextLocal.Provider value={{
@@ -47,7 +47,8 @@ export function ContextLocalProvide({ children }) {
             reduceContext, setreduceContext,
             priceDelivery, setpriceDelivery,
             copyGeneral, setCopyGeneral,
-          
+            stateCheckoutForm, setstateCheckoutForm,
+
         }}>
             {children}
         </ContextLocal.Provider>
