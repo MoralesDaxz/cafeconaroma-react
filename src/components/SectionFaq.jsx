@@ -86,12 +86,12 @@ export const SectionFaq = () => {
                 <div className='font-medium text-2xl text-white'>
                     <h2>Preguntas frecuentes</h2>
                 </div>
-                <div className='flex flex-col gap-4 w-[668px]'>
+                <div className=' flex flex-col gap-4 w-[668px]'>
                     {dataFaq.map((item,indice) => {
                         const isExpanded = indice == answerClass;
                         return (
-                        <article key={indice} className='bg-[#F7F5F3] p-6 rounded-[10px]'>
-                            <div className='flex flex-row justify-between cursor-pointer' onClick={() => setanswerClass( isExpanded ? null : indice)}>
+                        <article onClick={() => setanswerClass( isExpanded ? null : indice)} key={indice} className='bg-[#F7F5F3] p-6 rounded-[10px] cursor-pointer'>
+                            <div className='flex flex-row justify-between ' >
                             
                                 <h3 className=' font-semibold text-lg text-[#2B2A2B]'>{item.question}</h3>
                                 <img className={isExpanded?' duration-[0.8s] rotate-180 ':'duration-[0.7s]'} src={arrowDown} alt='flecha-abajo' />

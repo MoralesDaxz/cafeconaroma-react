@@ -24,7 +24,7 @@ export const Login = () => {
 
     return (
         <>
-            <div className='flex flex-col items-center'>
+            <div className='flex flex-col items-center min-h-[100vh] pt-[3rem]'>
                 <div id="contenMain">
                     <section className="contenSection back1">
                         <div>

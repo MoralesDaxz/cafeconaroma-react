@@ -10,44 +10,21 @@ export const SectionForm = () => {
     /*Mantener Modal -> validateLS.length >1  -> "REGISTRADO", JSON.parse(localStorage.getItem("formulario"))  control cada vez que se vulve a renderizar verifica LS como valor inicial*/
     /* Si quiere volver a registrar QUITAR valor inicial de estado*/
     const [inputCheckbox, setInputCheckBox] = useState(false)
-    /* estadodel input ckeckbox true or false*/
+    /* estado del input ckeckbox true or false*/
 
     const { register, handleSubmit, setValue, watch, formState: { errors }, } = useForm('')
 
     const [nameRegistred, setnameRegistred] = useState([])
 
-    /*  const handleChange = (evt) => {
-         setValue("codeCountry", evt.target.value);
-       console.log(this.setState({ value: event.target.value }));
-     } */
+
     const fnOnSubmit = handleSubmit((data) => {
-        console.log(data);
+      
         setInputCheckBox(true);
         setTimeout(() => {
             setvalidateLS([data])
             localStorage.setItem('formulario', JSON.stringify([data]))
         }, 1000)
         setnameRegistred(data.nombre)
-    /*     if (!data.check) {
-            let modal = confirm(`Aceptas politicas y terminos?`) 
-            if (modal) {
-                setInputCheckBox(true);
-                setTimeout(() => {
-                    setvalidateLS([data])
-                    localStorage.setItem('formulario', JSON.stringify([data]))
-                }, 1000)
-
-            } else {
-                setInputCheckBox(false)
-            }
-        } else {
-            setInputCheckBox(true);
-            setTimeout(() => {
-                setvalidateLS([data])
-                localStorage.setItem('formulario', JSON.stringify([data]))
-            }, 1000)
-
-        } */
     })
 
     return (
@@ -73,7 +50,7 @@ export const SectionForm = () => {
                             <div className='flex flex-col gap-6'>
                                 <div className='flex flex-col gap-1'>
                                     <label htmlFor='nombre'>Nombre completo</label>
-                                    <input type="text" className='inputForm'
+                                    <input type="text" className='inputForm' onBlur={() => trigger("nombre")}
                                         {...register("nombre", {
                                             required: {
                                                 value: true,
@@ -96,7 +73,7 @@ export const SectionForm = () => {
                                 </div>
                                 <div className='flex flex-col gap-1'>
                                     <label>Email</label>
-                                    <input  className='inputForm' {...register("email", {
+                                    <input  className='inputForm' onBlur={() => trigger("email")} {...register("email", {
                                         required: {
                                             value: true,
                                             message: "Email es requerido",
@@ -112,7 +89,7 @@ export const SectionForm = () => {
                                 <div className='flex flex-col gap-1'>
                                     <label>Teléfono</label>
                                     <div className='inputForm flex flex-row items-center gap-3'>
-                                        <select required {...register("codeCountry", {
+                                        <select onBlur={() => trigger("codeCountry")} required {...register("codeCountry", {
                                            /*  required: {
                                                 value: true,
                                                 message: "Pais requerido",
@@ -129,7 +106,7 @@ export const SectionForm = () => {
                                         </select>
 
 
-                                        <input type='tel' className='border-0' placeholder='+1 (555) 987-6543'
+                                        <input type='tel' className='border-0' placeholder='+1 (555) 987-6543' onBlur={() => trigger("telefono")}
                                             {...register("telefono", {
                                                 required: {
                                                     value: true,
@@ -145,13 +122,13 @@ export const SectionForm = () => {
                                     {errors.telefono && (<span className="inputError">{errors.telefono.message}</span>)}
 
                                 </div>
-                                <textarea {...register('textArea', {
+                                <textarea  {...register('textArea', {
                                     required: {
                                         value: false, message: "Aceptar terminos y condiciones",
                                     }
                                 })} className='textareaForm' cols='30' rows='6' placeholder='¿En qué podemos ayudarte?'></textarea>
                                 <div className='flex gap-3'>
-                                    <input onClick={() => inputCheckbox ? setInputCheckBox(false) : setInputCheckBox(true)} checked={inputCheckbox} {...register('aceptTerms', {
+                                    <input onBlur={() => trigger("aceptTerms")} onClick={() => inputCheckbox ? setInputCheckBox(false) : setInputCheckBox(true)} checked={inputCheckbox} {...register('aceptTerms', {
                                         required: {
                                             value: true, message: "Aceptar terminos y condiciones",
                                         }
