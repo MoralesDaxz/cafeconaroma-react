@@ -9,21 +9,17 @@ import { paises } from "../utils/paises.js";
 
 export const Checkout = () => {
   const {
-    infLocalContext,
-    setinfLocalContext,
-    totalContext,
-    settotalContext,
-    ivaContext,
-    setivaContext,
-    reduceContext,
-    setreduceContext,
-    priceDelivery,
-    setpriceDelivery,
-    copyGeneral,
-    setCopyGeneral,
-    stateCheckoutForm,
-    setstateCheckoutForm,
-  } = useContext(ContextLocal);
+infLocalContext,setInfLocalContext,
+totalContext,setTotalContext,
+ivaContext,setIvaContext,
+reduceContext,setReduceContext,
+priceDelivery,setPriceDelivery,
+copyGeneral,setCopyGeneral,
+stateCheckoutForm,setStateCheckoutForm,
+} = useContext(ContextLocal);
+
+const [inputKind, setinputKind] = useState(false);
+const [stateSelect, setstateSelect] = useState("");
 
   const {
     register,
@@ -31,8 +27,6 @@ export const Checkout = () => {
     trigger,
     formState: { errors },
   } = useForm({});
-  const [inputKind, setinputKind] = useState(false);
-  const [stateSelect, setstateSelect] = useState("");
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -48,16 +42,15 @@ export const Checkout = () => {
   }, [totalContext || reduceContext.cantidad]);
 
 let test=[]
+
   const fnOnSubmit = handleSubmit((data) => {
     test.push(data)
-    setstateCheckoutForm('habil');
+    setStateCheckoutForm('habil');
     if (data.inputRadio === "on") {
       data.inputRadio = inputKind;
     }
     localStorage.setItem("formularioCheckout", JSON.stringify([data]));
     localStorage.setItem("pedido", JSON.stringify(copyGeneral));
-     console.log(data);
-     console.log(test);
   });
 
   return (
@@ -116,7 +109,7 @@ let test=[]
                           },
                           onBlur: (e) => {
                             e.target.value === ""
-                              ? setstateCheckoutForm(false)
+                              ? setStateCheckoutForm(false)
                               : "";
                             fnOnSubmit();
                           },
@@ -206,7 +199,7 @@ let test=[]
                             },
                           })}
                           placeholder="123"
-                          onBlur={() => trigger("codigoTj")}
+                          onBlur={() => trigger("codigoTj") }
                         ></input>
                         {errors.codigoTj && (
                           <span className="inputError">
@@ -356,6 +349,7 @@ let test=[]
                 <div className="inputTjDebito">
                   <label>Teléfono</label>
                   <input
+                  type="tel"
                     className="inputForm"
                     placeholder="+34 600 6000 600"
                     {...register("checkTelefono", {
@@ -366,8 +360,16 @@ let test=[]
                       pattern: {
                         value:
                           /^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{3,6}$/im,
-                        message: "No usar letras. Ejemplo: +34614092275",
+                        message: "Valide formato, Ejemplo: +34614092275",
                       },
+                        minLength:{
+                        value:12,
+                        message: 'Minimo 12 caracteres, Ejemplo: +34614092275'
+                      },
+                      maxLength:{
+                        value:14,
+                        message: 'Maximo 14 caracteres.'
+                      }
                     })}
                     onBlur={() => trigger("checkTelefono")}
                   ></input>
@@ -561,9 +563,9 @@ let test=[]
                       </span>
                     )}
                   </div>
-                  <div className="inputTjDebito">
+                  <div onMouseMove={()=>{fnOnSubmit()}} className="inputTjDebito">
                     <label>Puerta</label>
-                    <input
+                    <input 
                       placeholder=""
                       {...register("checkPuerta", {
                         required: {
@@ -599,8 +601,7 @@ let test=[]
                     envio={priceDelivery}
                   />
                   <div className="flex flex-row gap-7 mt-4">
-
-                    <Link onClick={()=>{fnOnSubmit();console.log('Click');}} to={stateCheckoutForm==='habil'?'/success':null}> 
+                    <Link onClick={()=>{fnOnSubmit()}} to={stateCheckoutForm === 'habil'?'/success':null}> 
                     <input
                           type="submit"
                           value={"Pagar y realizar pedido"}
@@ -609,14 +610,7 @@ let test=[]
                           }
                         /> 
                     </Link>
-                        
-
-
-
-                     {/*  {test?.length >=1?<Navigate to={'/success'}></Navigate>:''}  */}
-                     {/*   {<Navigate to={test.length >=1?'/success':null}></Navigate>} */}
-                      {/* <Link  to={test?.length > 0?'/success':null}>  </Link>  */}
-                      
+                    <div>Validar</div>
                   </div>
                 </div>
               </div>

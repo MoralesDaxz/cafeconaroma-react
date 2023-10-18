@@ -10,15 +10,10 @@ export const SectionForm = () => {
     /*Mantener Modal -> validateLS.length >1  -> "REGISTRADO", JSON.parse(localStorage.getItem("formulario"))  control cada vez que se vulve a renderizar verifica LS como valor inicial*/
     /* Si quiere volver a registrar QUITAR valor inicial de estado*/
     const [inputCheckbox, setInputCheckBox] = useState(false)
-    /* estado del input ckeckbox true or false*/
-
+    const [nameRegistred, setnameRegistred] = useState([])
     const { register, handleSubmit, setValue, watch, formState: { errors }, } = useForm('')
 
-    const [nameRegistred, setnameRegistred] = useState([])
-
-
     const fnOnSubmit = handleSubmit((data) => {
-      
         setInputCheckBox(true);
         setTimeout(() => {
             setvalidateLS([data])
@@ -90,22 +85,13 @@ export const SectionForm = () => {
                                     <label>Teléfono</label>
                                     <div className='inputForm flex flex-row items-center gap-3'>
                                         <select onBlur={() => trigger("codeCountry")} required {...register("codeCountry", {
-                                           /*  required: {
-                                                value: true,
-                                                message: "Pais requerido",
-                                            }, */
-                                            /*  onChange:(evt)=>{setValue("codeCountry", evt.target.value)
-                                             console.log(codeCountry);
-                                        } */
-                                        })}  >
-                                            {/* <option disabled title="Seleccione pais" >Pais</option> */}
+                                        })} >
+                                         
                                             <option value="+34" title="España +34" >ES</option>
                                             <option value="+57" title="Colombia +57" >CO</option>
                                             <option value="+01" title="Estados Unidos +01" >EU</option>
                                             <option value="+58" title="Venezuela +58" >VE</option>
                                         </select>
-
-
                                         <input type='tel' className='border-0' placeholder='+1 (555) 987-6543' onBlur={() => trigger("telefono")}
                                             {...register("telefono", {
                                                 required: {
@@ -120,7 +106,6 @@ export const SectionForm = () => {
                                         ></input>
                                     </div>
                                     {errors.telefono && (<span className="inputError">{errors.telefono.message}</span>)}
-
                                 </div>
                                 <textarea  {...register('textArea', {
                                     required: {
@@ -144,10 +129,8 @@ export const SectionForm = () => {
                             <div className='flex flex-col items-center justify-center h-[50%] w-[80%] rounded-xl shadowModalCar'>
                                 <h1 className=' text-xl'>¡Hola! {nameRegistred} hemos recibido la informacion.</h1>
                                 <p className='underline'>Pronto daremos respuesta.</p>
-
                             </div>
                         </div>}
-
                 </div>
             </div>
             <Footer />

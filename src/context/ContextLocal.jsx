@@ -4,13 +4,13 @@ export const ContextLocal = createContext({});
 
 export function ContextLocalProvide({ children }) {
     const datosLocalStorage = JSON.parse(localStorage.getItem("buys")) || [];
-    const [infLocalContext, setinfLocalContext] = useState(datosLocalStorage);
-    const [totalContext, settotalContext] = useState(0);
-    const [ivaContext, setivaContext] = useState(0);
-    const [reduceContext, setreduceContext] = useState(0);
-    const [priceDelivery, setpriceDelivery] = useState(0);
+    const [infLocalContext, setInfLocalContext] = useState(datosLocalStorage);
+    const [totalContext, setTotalContext] = useState(0);
+    const [ivaContext, setIvaContext] = useState(0);
+    const [reduceContext, setReduceContext] = useState(0);
+    const [priceDelivery, setPriceDelivery] = useState(0);
     const [copyGeneral, setCopyGeneral] = useState({})
-    const [stateCheckoutForm, setstateCheckoutForm] = useState(false)
+    const [stateCheckoutForm, setStateCheckoutForm] = useState(false)
 
     const resultReduce = infLocalContext.reduce((accumulator, currentValue) => {
         accumulator.precio += currentValue.precio
@@ -21,33 +21,33 @@ export function ContextLocalProvide({ children }) {
     useEffect(() => {
         localStorage.setItem('buys', JSON.stringify(infLocalContext))
         if (resultReduce.cantidad > 0) {//Evaluamos si hay producto ? agregamos valor producto + envio, : muestra solo 9€ en basket sin afectar el total
-            settotalContext(Number.parseFloat(reduceContext.precio + priceDelivery).toFixed(2).replace('.', ','))
-            setivaContext(((reduceContext.precio + priceDelivery) * 21) / 100)
+            setTotalContext(Number.parseFloat(reduceContext.precio + priceDelivery).toFixed(2).replace('.', ','))
+            setIvaContext(((reduceContext.precio + priceDelivery) * 21) / 100)
         } else {
-            settotalContext(0)
-            setivaContext(0)
+            setTotalContext(0)
+            setIvaContext(0)
         }
     }, [datosLocalStorage])
 
     useEffect(() => {//evitamos multiple rederizacion, al cambiar lo que traemos de LS setea un nuevo resulReduce
-        setreduceContext(resultReduce)
+        setReduceContext(resultReduce)
     }, [infLocalContext])
 
     useEffect(() => {
         // Limpiar localStorage al cargar el componente
-        setinfLocalContext([])
+        setInfLocalContext([])
         localStorage.setItem("formulario", JSON.stringify([]));
     }, [window]);
 
     return (
         <ContextLocal.Provider value={{
-            infLocalContext, setinfLocalContext,
-            totalContext, settotalContext,
-            ivaContext, setivaContext,
-            reduceContext, setreduceContext,
-            priceDelivery, setpriceDelivery,
+            infLocalContext, setInfLocalContext,
+            totalContext, setTotalContext,
+            ivaContext, setIvaContext,
+            reduceContext, setReduceContext,
+            priceDelivery, setPriceDelivery,
             copyGeneral, setCopyGeneral,
-            stateCheckoutForm, setstateCheckoutForm,
+            stateCheckoutForm, setStateCheckoutForm,
 
         }}>
             {children}

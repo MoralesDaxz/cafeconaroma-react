@@ -7,11 +7,11 @@ import { SectionBasket } from '../components/SectionBasket';
 import { ContextLocal } from "../context/ContextLocal";
 
 export const Basket = () => {
-  const {   infLocalContext, setinfLocalContext,
-            totalContext, settotalContext,
-            ivaContext, setivaContext,
-            reduceContext, setreduceContext,
-            priceDelivery, setpriceDelivery, 
+  const {   infLocalContext, setInfLocalContext,
+            totalContext, setTotalContext,
+            ivaContext, setIvaContext,
+            reduceContext, setReduceContext,
+            priceDelivery, setPriceDelivery, 
             copyGeneral, setCopyGeneral,
           } = useContext(ContextLocal);
      

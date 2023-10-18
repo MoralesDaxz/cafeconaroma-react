@@ -10,17 +10,17 @@ import { TotalIva } from '../components/TotalIva';
 import { Button } from '../components/Button';
 
 export const Success = () => {
-  const { infLocalContext, setinfLocalContext,
-    totalContext, settotalContext,
-    ivaContext, setivaContext,
-    reduceContext, setreduceContext,
-    priceDelivery, setpriceDelivery,
+  const { infLocalContext, setInfLocalContext,
+    totalContext, setTotalContext,
+    ivaContext, setIvaContext,
+    reduceContext, setReduceContext,
+    priceDelivery, setPriceDelivery,
     copyGeneral, setCopyGeneral,
   } = useContext(ContextLocal);
 
   useEffect(() => {
-    setinfLocalContext([])
-    setpriceDelivery(0)
+    setInfLocalContext([])
+    setPriceDelivery(0)
     window.scrollTo(0, 0);
   }, []);
 

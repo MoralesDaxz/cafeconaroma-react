@@ -4,7 +4,7 @@ import { DetailBag } from './DetailBag'
 import { ContextLocal } from '../context/ContextLocal'
 export const Product = ({ id,nombre, imagen, precio,signos,line, success}) => {
 
-/*   const { infLocalContext, setinfLocalContext } = useContext(ContextLocal);   */
+/*   const { infLocalContext, setInfLocalContext } = useContext(ContextLocal);   */
   //componente se utlizara sin signo en pagina de PAGO
     return (
         <>
