@@ -19,6 +19,7 @@ export const Success = () => {
   } = useContext(ContextLocal);
 
   useEffect(() => {
+    setStateCheckoutForm(false)
     setInfLocalContext([])
     setPriceDelivery(0)
     window.scrollTo(0, 0);

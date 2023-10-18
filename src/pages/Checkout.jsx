@@ -27,7 +27,8 @@ const [stateSelect, setstateSelect] = useState("");
     trigger,
     formState: { errors },
   } = useForm({});
-
+  
+console.log(errors?'No hay errores':'Hay error');
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
@@ -41,18 +42,17 @@ const [stateSelect, setstateSelect] = useState("");
     });
   }, [totalContext || reduceContext.cantidad]);
 
-let test=[]
-
   const fnOnSubmit = handleSubmit((data) => {
-    test.push(data)
+
     setStateCheckoutForm('habil');
+
     if (data.inputRadio === "on") {
       data.inputRadio = inputKind;
     }
     localStorage.setItem("formularioCheckout", JSON.stringify([data]));
     localStorage.setItem("pedido", JSON.stringify(copyGeneral));
-  });
 
+  });
   return (
     <>
       <div className="bg-[#FFFFFF] w-full min-h-[100vh] flex flex-col items-center px-10 pb-10 pt-[7rem]">
@@ -610,6 +610,7 @@ let test=[]
                           }
                         /> 
                     </Link>
+               {/*    {stateCheckoutForm === 'habil'&& <Navigate to={'/success'}></Navigate>}  */}
                     <div>Validar</div>
                   </div>
                 </div>

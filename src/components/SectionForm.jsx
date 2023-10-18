@@ -21,7 +21,6 @@ export const SectionForm = () => {
         }, 1000)
         setnameRegistred(data.nombre)
     })
-
     return (
         <>
             <div className='bg-[#E3DED7] flex flex-row justify-center items-center'>
