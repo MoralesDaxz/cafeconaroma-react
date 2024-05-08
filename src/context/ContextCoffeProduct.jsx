@@ -7,13 +7,8 @@ export const ContextCoffe = createContext(null);
 export function ContextCoffeProvide({ children }) {
   const [products, setProducts] = useState([]);
 
-/*  useEffect(() => {
-    getApiCoffee(apiCoffe).then(param => { setProducts(param.products) })
-  }, []); */
-
   useEffect(() => {
     getApiCoffee(apiCoffe).then(param => { setProducts(
-   
         param.products.sort((a,b) => {
           if (!a.available) {
           return 1

@@ -3,7 +3,7 @@ import { Button } from './Button'
 import { ContextCoffe } from '../context/ContextCoffeProduct.jsx'
 export const BagCoffee = ({ units }) => {
   
-  const { products, setProducts } = useContext(ContextCoffe);
+  const { products } = useContext(ContextCoffe);
 
   return (
     <div className='flex flex-row justify-center gap-6 flex-wrap'>{products?.map((item, indice) => {

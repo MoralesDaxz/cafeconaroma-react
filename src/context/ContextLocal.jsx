@@ -4,6 +4,7 @@ export const ContextLocal = createContext({});
 
 export function ContextLocalProvide({ children }) {
     const datosLocalStorage = JSON.parse(localStorage.getItem("buys")) || [];
+    /* Mirar local stora renderizaciones */
     const [infLocalContext, setInfLocalContext] = useState(datosLocalStorage);
     const [totalContext, setTotalContext] = useState(0);
     const [ivaContext, setIvaContext] = useState(0);
@@ -23,10 +24,11 @@ export function ContextLocalProvide({ children }) {
         if (resultReduce.cantidad > 0) {//Evaluamos si hay producto ? agregamos valor producto + envio, : muestra solo 9€ en basket sin afectar el total
             setTotalContext(Number.parseFloat(reduceContext.precio + priceDelivery).toFixed(2).replace('.', ','))
             setIvaContext(((reduceContext.precio + priceDelivery) * 21) / 100)
-        } else {
+            return;
+        }
             setTotalContext(0)
             setIvaContext(0)
-        }
+     
     }, [datosLocalStorage])
 
     useEffect(() => {//evitamos multiple rederizacion, al cambiar lo que traemos de LS setea un nuevo resulReduce

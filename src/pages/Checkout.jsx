@@ -610,8 +610,7 @@ console.log(errors?'No hay errores':'Hay error');
                           }
                         /> 
                     </Link>
-               {/*    {stateCheckoutForm === 'habil'&& <Navigate to={'/success'}></Navigate>}  */}
-                    <div>Validar</div>
+      
                   </div>
                 </div>
               </div>
