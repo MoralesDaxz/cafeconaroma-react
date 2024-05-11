@@ -1,4 +1,3 @@
-import React from 'react'
 import iconTlf from '../assets/iconTlf.svg'
 import iconMail from '../assets/footer-email.svg'
 import { SectionWrapLinks } from './SectionWrapLinks'
@@ -10,7 +9,7 @@ export const Footer = () => {
             <div className='h-[310px] bg-[#1F1815] flex flex-col items-center justify-between'>
 
                 <div className=' my-[2%] text-white flex flex-col w-[1200px]'>
-                    <LogoCafe/>
+                    <LogoCafe />
                     <div className='flex flex-row  min-w-full'>
                         <div className='flex flex-col gap-4 w-[50%]'>
                             <p className=' text-lg font-medium'>Te ayudamos en</p>
@@ -25,12 +24,12 @@ export const Footer = () => {
                         </div>
                         <div className='w-[50%] flex flex-row gap-[127px]'>
                             <div>
-                            <SectionWrapLinks style={'footer'} />
+                                <SectionWrapLinks style={'footer'} />
                             </div>
                             <div className='flex flex-col gap-4'>
-                               <Link to={'/privacidad'} ><p className=' font-medium text-sm cursor-pointer'>Política de privacidad</p></Link> 
-                               <Link to={'/cookies'}><p className=' font-medium text-sm cursor-pointer'>Política de cookies</p></Link> 
-                                <Link to={'/terminos'}><p className=' font-medium text-sm cursor-pointer'>Términos y condiciones</p></Link>
+                                <Link to={'/privacy'} ><p className=' font-medium text-sm cursor-pointer'>Política de privacidad</p></Link>
+                                <Link to={'/cookies'}><p className=' font-medium text-sm cursor-pointer'>Política de cookies</p></Link>
+                                <Link to={'/terms'}><p className=' font-medium text-sm cursor-pointer'>Términos y condiciones</p></Link>
                             </div>
                         </div>
                     </div>

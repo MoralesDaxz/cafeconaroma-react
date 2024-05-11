@@ -53,7 +53,7 @@ export const SectionFaq = () => {
                    
                    
                 </div>
-               <Link to={'/contacto'}><ArrowRigth color={'white'} text={'Resolvemos tus dudas'}></ArrowRigth></Link> 
+               <Link to={'/Contact'}><ArrowRigth color={'white'} text={'Resolvemos tus dudas'}></ArrowRigth></Link> 
             </section>
         </>
     )
@@ -103,7 +103,7 @@ export const SectionFaq = () => {
                         </article>)
                     })}
                 </div>
-               <Link to={'/contacto'}><ArrowRigth color={'white'} text={'Resolvemos tus dudas'}></ArrowRigth></Link> 
+               <Link to={'/Contact'}><ArrowRigth color={'white'} text={'Resolvemos tus dudas'}></ArrowRigth></Link> 
             </section>
         </>
     )

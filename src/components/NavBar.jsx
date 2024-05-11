@@ -1,13 +1,9 @@
-import {React,useState} from 'react'
-
 import iconTlf from '../assets/iconTlf.svg'
-import iconCar from '../assets/Car.svg'
 import { SectionWrapLinks } from './SectionWrapLinks'
 import { Button } from './Button'
 import { Link } from "react-router-dom";
 import { LogoCafe } from './LogoCafe'
 import { CarShop } from './CarShop.jsx'
-
 
 export const NavBar = () => {
    

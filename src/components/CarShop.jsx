@@ -1,4 +1,4 @@
-import { React, useState, useContext, useEffect, useRef } from 'react'
+import {  useState, useContext } from 'react'
 import iconCar from '../assets/Car.svg'
 import iconCarFast from '../assets/car-fast.svg'
 import iconMin from '../assets/minimize.svg'
@@ -41,11 +41,11 @@ export const CarShop = () => {
             <img id='close' onClick={() => showModal === 'shopping' ? setshowModal('hidden') : setshowModal('hidden')} className='w-6' src={iconMin} />
             <p>Cerrar</p>
           </div>
-          {isCheckout?'': totalContext !== 0 ? <div onClick={() => { setBuyContext() }} className='flex flex-col items-center justify-end cursor-pointer'>
+          {isCheckout ? '' : totalContext !== 0 ? <div onClick={() => { setBuyContext() }} className='flex flex-col items-center justify-end cursor-pointer'>
             <img className='w-6' src={iconClear} />
             <p className=' text-gray-500 text-[.6rem]'>Limpiar</p>
           </div> : ''}
-         {/*  {totalContext !== 0 ? <div onClick={() => { setBuyContext() }} className='flex flex-col items-center justify-end cursor-pointer'>
+          {/*  {totalContext !== 0 ? <div onClick={() => { setBuyContext() }} className='flex flex-col items-center justify-end cursor-pointer'>
             <img className='w-6' src={iconClear} />
             <p className=' text-gray-500 text-[.6rem]'>Limpiar</p>
           </div> : ''} */}

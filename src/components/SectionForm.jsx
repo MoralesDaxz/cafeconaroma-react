@@ -1,4 +1,4 @@
-import { React, useState, useContext } from 'react'
+import { useState } from 'react'
 import iconMail from '../assets/form-email.svg'
 import iconTlf from '../assets/form-phone.svg'
 import { Footer } from './Footer'
@@ -11,7 +11,7 @@ export const SectionForm = () => {
     /* Si quiere volver a registrar QUITAR valor inicial de estado*/
     const [inputCheckbox, setInputCheckBox] = useState(false)
     const [nameRegistred, setnameRegistred] = useState([])
-    const { register, handleSubmit, setValue, watch, formState: { errors }, } = useForm('')
+    const { register, handleSubmit, trigger, formState: { errors }, } = useForm('')
 
     const fnOnSubmit = handleSubmit((data) => {
         setInputCheckBox(true);
@@ -26,10 +26,10 @@ export const SectionForm = () => {
             <div className='bg-[#E3DED7] flex flex-row justify-center items-center'>
                 <div className='w-[1200px] flex flex-row gap-6'>
                     <div className='w-[50%] h-[552px] flex flex-col justify-center gap-3'>
-                        <h3 className=' font-semibold text-lg text-[#111827]'>Entra en contacto con nosotros</h3>
+                        <h3 className=' font-semibold text-lg text-[#111827]'>Entra en Contact con nosotros</h3>
                         <div className='flex flex-col gap-6 font-normal text-sm text-[#6B7280]'>
-                            <p>Si tienes dudas, ponte en contacto con nosotros a través del formulario y te responderemos lo antes posible.</p>
-                            <p>También puedes ponerte en contacto con nosotros en nuestra dirección o a través del teléfono de la tienda.</p>
+                            <p>Si tienes dudas, ponte en Contact con nosotros a través del formulario y te responderemos lo antes posible.</p>
+                            <p>También puedes ponerte en Contact con nosotros en nuestra dirección o a través del teléfono de la tienda.</p>
                             <div>
                                 <p>742 Evergreen Terrace</p>
                                 <p>Springfield, OR 12345</p>
@@ -67,7 +67,7 @@ export const SectionForm = () => {
                                 </div>
                                 <div className='flex flex-col gap-1'>
                                     <label>Email</label>
-                                    <input  className='inputForm' onBlur={() => trigger("email")} {...register("email", {
+                                    <input className='inputForm' onBlur={() => trigger("email")} {...register("email", {
                                         required: {
                                             value: true,
                                             message: "Email es requerido",
@@ -85,7 +85,7 @@ export const SectionForm = () => {
                                     <div className='inputForm flex flex-row items-center gap-3'>
                                         <select onBlur={() => trigger("codeCountry")} required {...register("codeCountry", {
                                         })} >
-                                         
+
                                             <option value="+34" title="España +34" >ES</option>
                                             <option value="+57" title="Colombia +57" >CO</option>
                                             <option value="+01" title="Estados Unidos +01" >EU</option>
@@ -117,7 +117,7 @@ export const SectionForm = () => {
                                             value: true, message: "Aceptar terminos y condiciones",
                                         }
                                     })} id='checkBox' className='accent-[#2A5B45] w-auto' type='checkbox' ></input>
-                                    <label>Acepto la <Link className='underline cursor-pointer font-semibold' to={'/privacidad'}>Política de Privacidad</Link> y los <Link className='underline cursor-pointer font-semibold' to={'/terminos'}>Términos y condiciones</Link>.</label>
+                                    <label>Acepto la <Link className='underline cursor-pointer font-semibold' to={'privacy'}>Política de Privacidad</Link> y los <Link className='underline cursor-pointer font-semibold' to={'/terms'}>Términos y condiciones</Link>.</label>
                                 </div>
                                 {errors.aceptTerms && (<span className="inputError">{errors.aceptTerms.message}</span>)}
                                 <input type='submit' value={'Enviar'} className={'bg-[#2A5B45] cursor-pointer rounded text-white flex flex-row items-center justify-center w-[90px] h-[40px]'} />

@@ -1,34 +1,25 @@
-import { React, useContext, useEffect, useState } from 'react'
+import { useContext, useEffect } from 'react'
 import { ContextLocal } from "../context/ContextLocal";
 import { Link } from "react-router-dom";
 import { Product } from '../components/Product';
 import cardsCheck from '../assets/check.svg'
 import { SubTotal } from '../components/SubTotal';
-import { TotalDelivery } from '../components/TotalEnvio';
+import { TotalDelivery } from '../components/TotalDelivery';
 import { Total } from '../components/Total';
 import { TotalIva } from '../components/TotalIva';
 import { Button } from '../components/Button';
 
 export const Success = () => {
-  const { infLocalContext, setInfLocalContext,
-    totalContext, setTotalContext,
-    ivaContext, setIvaContext,
-    reduceContext, setReduceContext,
-    priceDelivery, setPriceDelivery,
-    copyGeneral, setCopyGeneral,
+  const { setInfLocalContext, setPriceDelivery,
   } = useContext(ContextLocal);
 
   useEffect(() => {
-    /* setStateCheckoutForm(false) */
     setInfLocalContext([])
     setPriceDelivery(0)
     window.scrollTo(0, 0);
   }, []);
 
   const informacion = JSON.parse(localStorage.getItem('pedido'))
-
- 
-
   return (
     <div className='bg-[#FFFFFF] min-h-[100vh] w-full flex flex-col items-center justify-center px-10 pb-10 pt-[7rem]'>
       <div className=' w-full flex flex-col items-center justify-center gap-6 '>
@@ -70,28 +61,6 @@ export const Success = () => {
           </div>
         </div>
 
-        {/* <div>
-
-<div class="loader">
-  <div class="cell d-0"></div>
-  <div class="cell d-1"></div>
-  <div class="cell d-2"></div>
-
-  <div class="cell d-1"></div>
-  <div class="cell d-2"></div>
-  
-  
-  <div class="cell d-2"></div>
-  <div class="cell d-3"></div>
-  
-  
-  <div class="cell d-3"></div>
-  <div class="cell d-4"></div>
-  
-  
-</div>
-
-</div> */}
         <Link to={'/store'}> <Button style={' bg-[#2A5B45] px-[24px] rounded text-[14px] font-[600] text-white py-[12px]'} text={'Volver a la tienda'}></Button></Link>
       </div>
 

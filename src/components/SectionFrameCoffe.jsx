@@ -1,13 +1,9 @@
-import { React,useState } from 'react'
-import arrowBlack from '../assets/flecha-derecha-negra.svg'
 import { Link } from 'react-router-dom'
 
 const styleTopStore = 'px-10  pb-10 pt-[7rem] bg-[white]  flex flex-col justify-center items-center gap-10'
 const styleTopHome = 'p-10  bg-[white]  flex flex-col justify-center items-center gap-10'
 
 export const SectionFrameCoffe = ({coffees,arrow,title,location}) => {
-
-
   return (
     <>
       <div className={location==='home'?styleTopHome:location==='store'?styleTopStore:''}>

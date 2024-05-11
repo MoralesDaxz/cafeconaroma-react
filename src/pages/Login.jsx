@@ -1,9 +1,7 @@
 import '../login.css'
-import React from 'react'
-import { Link } from 'react-router-dom'
+
 const spinner = document.getElementById('svgSpinner')
 const invTag = document.getElementById('invit')
-const inv = 'invitado'
 
 function loginInv() {
     spinner.classList.remove('spinner')
@@ -53,10 +51,10 @@ export const Login = () => {
                             </div>
                         </div>
                         <div className="gpLink">
-                            <a onClick={() => loginInv()} id='invit' className="a0"><h3>Invitado</h3></a>
-                            <a href="https://es-es.facebook.com/" className="a1"><h3>Acceder con Facebook</h3></a>
-                            <a href="https://twitter.com/?lang=es" className="a2"><h3>Acceder con Twitter</h3></a>
-                            <a href="https://accounts.google.com/" className="a3"><h3>Acceder con Google</h3></a>
+                            <a onClick={() => loginInv()} id='invit' className="a0 p-2"><h3>Invitado</h3></a>
+                            <a href="https://es-es.facebook.com/" className="a1 p-2"><h3>Facebook</h3></a>
+                            <a href="https://twitter.com/?lang=es" className="a2 p-2"><h3>Twitter</h3></a>
+                            <a href="https://accounts.google.com/" className="a3 p-2"><h3>Google</h3></a>
                         </div>
                     </section>
                 </div>

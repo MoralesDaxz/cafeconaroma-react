@@ -1,4 +1,4 @@
-import { React, useContext, useEffect, useState } from 'react'
+import { useContext, useEffect } from 'react'
 import { Link } from "react-router-dom";
 import { SectionProductBasket } from '../components/SectionProductBasket';
 import { SectionDelivery } from '../components/SectionDelivery';
@@ -7,17 +7,16 @@ import { SectionBasket } from '../components/SectionBasket';
 import { ContextLocal } from "../context/ContextLocal";
 
 export const Basket = () => {
-  const {   infLocalContext, setInfLocalContext,
-            totalContext, setTotalContext,
-            ivaContext, setIvaContext,
-            reduceContext, setReduceContext,
-            priceDelivery, setPriceDelivery, 
-            copyGeneral, setCopyGeneral,
-          } = useContext(ContextLocal);
-     
-            useEffect(() => {
-              window.scrollTo(0, 0);
-            }, []);
+  const {
+    totalContext,
+    reduceContext,
+    priceDelivery,
+
+  } = useContext(ContextLocal);
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   return (
     <>
@@ -33,14 +32,14 @@ export const Basket = () => {
           </div>
           <div className=''>
             <div className='bg-[#F7F5F3] w-[30%] p-6 fixed z-60 '>
-            <SectionBasket precio={reduceContext.precio} totalyDelivery={totalContext} envio={priceDelivery} />
-            <div className='flex flex-row gap-7 mt-4'>
-             {reduceContext.cantidad >= 1? <Link to={'/check'}> <Button style={'bg-[#2A5B45] w-[129px] h-[40px] flex flex-col justify-center items-center rounded text-[white] font-semibold text-sm'} text={'Ir a checkout'} /></Link> :''} 
-              <Link to={'/store'}> <Button style={'bg-[transparent] w-[129px] h-[40px] flex flex-col justify-center items-center rounded text-[#2A5B45] font-semibold text-sm'} text={'Seguir comprando'} /></Link>
+              <SectionBasket precio={reduceContext.precio} totalyDelivery={totalContext} envio={priceDelivery} />
+              <div className='flex flex-row gap-7 mt-4'>
+                {reduceContext.cantidad >= 1 ? <Link to={'/check'}> <Button style={'bg-[#2A5B45] w-[129px] h-[40px] flex flex-col justify-center items-center rounded text-[white] font-semibold text-sm'} text={'Ir a checkout'} /></Link> : ''}
+                <Link to={'/store'}> <Button style={'bg-[transparent] w-[129px] h-[40px] flex flex-col justify-center items-center rounded text-[#2A5B45] font-semibold text-sm'} text={'Seguir comprando'} /></Link>
+              </div>
             </div>
           </div>
-          </div>
-          
+
         </div>
       </div>
     </>

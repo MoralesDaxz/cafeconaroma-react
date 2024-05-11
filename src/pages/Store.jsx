@@ -1,5 +1,4 @@
-import {React,useEffect} from 'react'
-import { NavBar } from '../components/NavBar'
+import { useEffect } from 'react'
 import { Footer } from '../components/Footer'
 import { SectionFrameCoffe } from '../components/SectionFrameCoffe'
 import { BagCoffee } from '../components/BagCoffe'
@@ -10,9 +9,9 @@ export const Store = () => {
   }, []);
   return (
     <>
-    <SectionFrameCoffe location={'store'} title={'Últimos orígenes'} coffees={<BagCoffee units={8}/>}/>
-    <SectionCardsInfo/>
-    <Footer/>
+      <SectionFrameCoffe location={'store'} title={'Últimos orígenes'} coffees={<BagCoffee units={8} />} />
+      <SectionCardsInfo />
+      <Footer />
     </>
   )
 }

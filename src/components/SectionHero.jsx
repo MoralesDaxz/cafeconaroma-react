@@ -1,12 +1,9 @@
-import React from 'react'
 import heroCafe from '../assets/heroCafe.png'
 import { Button } from './Button'
-import { NavBar } from './NavBar'
 import { Link } from 'react-router-dom'
 export const SectionHero = () => {
     return (
         <>
-         
             <section className=" flex flex-row justify-center pt-[8rem] pb-12 px-10 gap-6">
                 <article className='flex flex-col justify-center gap-4 w-[588px]'>
                     <div className='text-[#2A5B45] font-semibold text-lg w-[588px] h-6'>

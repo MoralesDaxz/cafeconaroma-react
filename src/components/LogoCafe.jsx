@@ -1,4 +1,3 @@
-import React from 'react'
 import { Link } from 'react-router-dom'
 import logoCafe from '../assets/Coffe.svg'
 export const LogoCafe = () => {

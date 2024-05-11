@@ -1,8 +1,4 @@
-import {React} from 'react'
-
-export const TotalDelivery = ({envio}) => {
-
-   
+export const TotalDelivery = ({envio}) => { 
     return (
       <div className='flex flex-row justify-between w-full'>
           <p className=' font-normal text-sm'>ENVIO</p>

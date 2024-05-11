@@ -1,9 +1,8 @@
-import {React,useContext,useState} from 'react'
+import {useContext} from 'react'
 import { ContextLocal } from '../context/ContextLocal';
 
 export const SectionDelivery = () => {
   const {setPriceDelivery,priceDelivery} = useContext(ContextLocal);
-const [checkedValue, setCheckedValue] = useState(true)
   return (
     <>
       <div className='flex flex-col gap-6'>
