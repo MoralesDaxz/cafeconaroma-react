@@ -15,11 +15,11 @@ export const Footer = () => {
                             <p className=' text-lg font-medium'>Te ayudamos en</p>
                             <div className='w-[182px] h-[48px] bg-[#515051]  rounded flex flex-row justify-center items-center '>
                                 <img src={iconTlf} alt="iconTlf" />
-                                <Link className='font-semibold ml-2 text-sm' to={'tel:+34919490518'}> +34 919 49 05 18</Link>
+                                <Link className='font-semibold ml-2 text-sm' to={'tel:+34919490518'}> +34 919 49 05 00</Link>
                             </div>
                             <div className='w-[232px] h-[48px] bg-[#515051] rounded flex flex-row justify-center items-center '>
                                 <img src={iconMail} alt="iconTlf" />
-                                <Link className='font-semibold ml-2 text-sm' to={'mailto:hola@cafedealtura.com'}>hola@cafedealtura.com</Link>
+                                <Link className='font-semibold ml-2 text-sm' to={'mailto:hola@cafedemontaña.com'}>hola@cafedemontaña.com</Link>
                             </div>
                         </div>
                         <div className='w-[50%] flex flex-row gap-[127px]'>

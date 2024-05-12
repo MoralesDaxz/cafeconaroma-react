@@ -14,7 +14,7 @@ export const NavBar = () => {
                 <SectionWrapLinks style={'nav'}/>
                 <div className='flex flex-row items-center justify-between '>
                     <img src={iconTlf} alt="iconTlf" />
-                    <Link to={'tel:+34919490518'} className='font-semibold ml-2 text-sm'> +34 919 49 05 18</Link>
+                    <Link to={'tel:+34919490518'} className='font-semibold ml-2 text-sm'> +34 919 49 05 00</Link>
                     <Link to={'/login'}>
                         <Button style={'font-semibold py-3 px-6 bg-[#515051] ml-6 flex flex-row items-center justify-center rounded'} text={'Iniciar sesión'}></Button>
                     </Link>

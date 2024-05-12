@@ -17,7 +17,7 @@ export const SectionHero = () => {
                             puedas viajar desde la comodidad de tu hogar.</p>
                     </div>
                     <div className='flex flex-row gap-4'>
-                        <Link to={'/origenes'}>
+                        <Link to={'/origins'}>
                         <Button style={'w-[168px] h-10 flex flex-row justify-center items-center rounded text-white bg-[#1F1815]'} text={'Descubrir orígenes'} />
                         </Link>
                         <Link to={'/store'} >
