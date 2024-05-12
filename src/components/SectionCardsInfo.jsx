@@ -1,4 +1,3 @@
-import React from 'react'
 import cardsImgBg from '../assets/Cards.png'
 import cardsCheck from '../assets/check.svg'
 import cardsTruck from '../assets/truck.svg'

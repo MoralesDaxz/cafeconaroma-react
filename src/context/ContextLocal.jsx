@@ -1,4 +1,5 @@
-import { React, useState, createContext, useEffect } from "react";
+/* eslint-disable react-hooks/exhaustive-deps */
+import { useState, createContext, useEffect } from "react";
 
 export const ContextLocal = createContext({});
 

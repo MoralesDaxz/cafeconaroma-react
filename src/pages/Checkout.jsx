@@ -1,24 +1,24 @@
-import { React, useContext, useEffect, useState } from "react";
+import {  useContext, useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
-import { Link,Navigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import iconBizum from "../assets/bizum.png";
-import { Button } from "../components/Button";
 import { SectionBasket } from "../components/SectionBasket";
 import { ContextLocal } from "../context/ContextLocal";
 import { paises } from "../utils/paises.js";
 
 export const Checkout = () => {
   const {
-infLocalContext,setInfLocalContext,
-totalContext,setTotalContext,
-ivaContext,setIvaContext,
-reduceContext,setReduceContext,
-priceDelivery,setPriceDelivery,
+infLocalContext,
+totalContext,
+ivaContext,
+reduceContext,
+priceDelivery,
 copyGeneral,setCopyGeneral,
 stateCheckoutForm,setStateCheckoutForm,
 } = useContext(ContextLocal);
 
 const [inputKind, setinputKind] = useState(false);
+// eslint-disable-next-line no-unused-vars
 const [stateSelect, setstateSelect] = useState("");
 
   const {
@@ -28,7 +28,7 @@ const [stateSelect, setstateSelect] = useState("");
     formState: { errors },
   } = useForm({});
   
-console.log(errors?'No hay errores':'Hay error');
+
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
@@ -359,6 +359,7 @@ console.log(errors?'No hay errores':'Hay error');
                       },
                       pattern: {
                         value:
+                          // eslint-disable-next-line no-useless-escape
                           /^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{3,6}$/im,
                         message: "Valide formato, Ejemplo: +34614092275",
                       },

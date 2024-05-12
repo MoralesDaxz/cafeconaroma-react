@@ -17,7 +17,7 @@ export const Success = () => {
     setInfLocalContext([])
     setPriceDelivery(0)
     window.scrollTo(0, 0);
-  }, []);
+  });
 
   const informacion = JSON.parse(localStorage.getItem('pedido'))
   return (

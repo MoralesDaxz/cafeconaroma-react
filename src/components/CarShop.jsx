@@ -50,7 +50,7 @@ export const CarShop = () => {
             <p className=' text-gray-500 text-[.6rem]'>Limpiar</p>
           </div> : ''} */}
 
-          {totalContext !== 0 ? <Link to={'/cesta'} className='cursor-pointer flex flex-row items-end gap-2 border-solid border-b-2 border-[#55a07e]'>
+          {totalContext !== 0 ? <Link to={'/basket'} className='cursor-pointer flex flex-row items-end gap-2 border-solid border-b-2 border-[#55a07e]'>
             {priceDelivery !== 0 ? <h2 className='font-medium text-base text-black  text-center ' >Urgente - ir a Cesta</h2> : <h2 className='font-medium text-base text-black  text-center '>ir a Cesta</h2>}
 
             <img className='w-8 ' src={priceDelivery === 0 ? iconCarPay : iconCarFast} />

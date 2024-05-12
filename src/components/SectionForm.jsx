@@ -98,7 +98,7 @@ export const SectionForm = () => {
                                                     message: "Telefono es requerido.",
                                                 },
                                                 pattern: {
-                                                    value: /^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/im,
+                                                    value: /^[+]?[(]?[0-9]{3}[)]?[-\s.]?[0-9]{3}[-\s.]?[0-9]{4,6}$/im,
                                                     message: 'Formato maximo 13 digitos, No usar letras. Ejemplo: +3182286968'
                                                 }
                                             })}
