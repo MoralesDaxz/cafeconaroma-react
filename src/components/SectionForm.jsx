@@ -26,10 +26,10 @@ export const SectionForm = () => {
             <div className='bg-[#E3DED7] flex flex-row justify-center items-center'>
                 <div className='w-[1200px] flex flex-row gap-6'>
                     <div className='w-[50%] h-[552px] flex flex-col justify-center gap-3'>
-                        <h3 className=' font-semibold text-lg text-[#111827]'>Entra en Contact con nosotros</h3>
+                        <h3 className=' font-semibold text-lg text-[#111827]'>Entra en contacto con nosotros</h3>
                         <div className='flex flex-col gap-6 font-normal text-sm text-[#6B7280]'>
-                            <p>Si tienes dudas, ponte en Contact con nosotros a través del formulario y te responderemos lo antes posible.</p>
-                            <p>También puedes ponerte en Contact con nosotros en nuestra dirección o a través del teléfono de la tienda.</p>
+                            <p>Si tienes dudas, ponte en contacto con nosotros a través del formulario y te responderemos lo antes posible.</p>
+                            <p>También puedes ponerte en contacto con nosotros en nuestra dirección o a través del teléfono de la tienda.</p>
                             <div>
                                 <p>742 Evergreen Terrace</p>
                                 <p>Springfield, OR 12345</p>

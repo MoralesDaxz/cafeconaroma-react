@@ -19,7 +19,7 @@ export const Footer = () => {
                             </div>
                             <div className='w-[232px] h-[48px] bg-[#515051] rounded flex flex-row justify-center items-center '>
                                 <img src={iconMail} alt="iconTlf" />
-                                <Link className='font-semibold ml-2 text-sm' to={'mailto:hola@cafedemontaña.com'}>hola@cafedemontaña.com</Link>
+                                <Link className='font-semibold ml-2 text-sm' to={'mailto:hola@cafeconaroma.com'}>hola@cafeconaroma.com</Link>
                             </div>
                         </div>
                         <div className='w-[50%] flex flex-row gap-[127px]'>
