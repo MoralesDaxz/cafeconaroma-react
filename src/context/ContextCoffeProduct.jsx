@@ -1,29 +1,35 @@
-import { useState, createContext,useEffect } from "react";
+import { useState, createContext, useEffect, useContext } from "react";
 import { getApiCoffee } from "../utils/getApiCoffee";
-const apiCoffe = "https://cafe-de-altura.vercel.app/api/products"
+const apiRender = "https://api-cafeconaroma.onrender.com/products";
+/* const apiVercel = "https://api-cafeconaroma.vercel.app/products/"; */
 
 export const ContextCoffe = createContext(null);
 
 export function ContextCoffeProvide({ children }) {
-  const [products, setProducts] = useState([]);
+  const [products, setProducts] = useState(null);
 
   useEffect(() => {
-    getApiCoffee(apiCoffe).then(param => { setProducts(
-        param.products.sort((a,b) => {
-          if (!a.available) {
-          return 1
-          }
-          if (!b.available) {
-          return -1
-          }
-          return a.price - b.price
-         }
-
-      )) })
+    getApiCoffee(apiRender)
+      .then((data) =>
+        setProducts(
+          data.products?.sort((a, b) => {
+            if (!a.available ) {
+              return 1;
+            }
+             if (!b.available) {
+              return -1;
+            }
+            return a.price - b.price;
+          })
+        )
+      )
+      .catch((error) => console.error("Error:", error));
   }, []);
   return (
     <ContextCoffe.Provider value={{ products, setProducts }}>
       {children}
     </ContextCoffe.Provider>
-  )
+  );
 }
+// eslint-disable-next-line react-refresh/only-export-components
+export const useContextCoffee = () => useContext(ContextCoffe);
